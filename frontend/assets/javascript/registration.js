@@ -27,7 +27,7 @@
                 }
             })
             .fail(function () {
-
+                $('body').html("une erreur critique est arrivée");
             });
             return false;
 
