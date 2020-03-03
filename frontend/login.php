@@ -13,6 +13,7 @@
                 <input type="text" name="login" required/><br>
                 <label>Password</label>
                 <input type="password" name="password" required/><br>
+                <p id="message"></p>
                 <input type="submit"/>
             </form>
             <a href="registration.php">Vous n'avez pas de compte? Inscriver-vous ici.</a>
