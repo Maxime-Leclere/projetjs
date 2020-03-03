@@ -5,9 +5,10 @@ $obj = new stdClass();
 $obj->success = false;
 $obj->message = 'nom d\'utilisateur ou mot de passe incorrect...';
 
+$found = null;
 // php a rempli $__POST[username] et $__POST[password]
-if($__POST['username'] == "momo" && $__POST['password'] == "lolo") {
-    $found =true; // trouver en base et ok
+if($__POST['login'] == "momo" && $__POST['password'] == "lolo") {
+    $found = true; // trouver en base et ok
 } else {
     $found = false;
 }
