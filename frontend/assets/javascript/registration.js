@@ -1,5 +1,6 @@
 (function () {
     "use strict";
+    alert("bonjour");
     $(() => {
         $('#form_registration').submit(function () {
             $('#message_login').fadeOut();
