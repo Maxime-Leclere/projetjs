@@ -5,13 +5,14 @@
             $('#message_login').fadeOut();
             $('#message_password').fadeOut();
 
+            alert("1");
             $.ajax({
                 url: $(this).attr('action'),
                 method: $(this).method('post'),
                 data: $(this).serialize()
             })
             .done(function (data) {
-                alert("bonjour");
+                alert("2");
                 /*
                 if (data.hasOwnProperty('success')) {
                     if (data.success === true) {
