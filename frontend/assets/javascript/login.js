@@ -2,7 +2,7 @@
     "use strict";
     $(() => {
         $('#message').fadeOut();
-        $('#form_login').submit(
+        $('#form_login').submit(function () {
             $.ajax({
                 url: $(this).attr('action'),
                 method: $(this).attr('method'),
@@ -24,6 +24,6 @@
                 $('body').html("une erreur critique est arrivée");
             });
             return false;
-        );
+        });
     });
 })();
