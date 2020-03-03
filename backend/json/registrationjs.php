@@ -9,9 +9,9 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
     $login = $_POST['login'];
     $password = $_POST['password'];
 
-    if (sizeof($login) > 10) {
+    if (strlen($login) > 10) {
         $obj->error["#message_login"] = "le login ne peut avoir que 10 caractères";
-    } if (sizeof($password) < 8) {
+    } if (strlen($password) < 8) {
         $obj->error["#message_password"] = "le password doit avoir plus de 8 caractères";
     }
     // if(/* on verifie si le login est dans la base de donnée*/) {
