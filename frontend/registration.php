@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <?= include 'head.php' ?>
+        <?= require_once 'head.php' ?>
     </head>
     <body>
-        <?= include 'header.php'?>
+        <?= require_once 'header.php'?>
         <main id="main">
             <h1>Inscription</h1>
-            <form id="form_registration" action="../backend/json/registration.php" method="post">
+            <form id="form_registration" action="../backend/json/registrationjs.php" method="post">
                 <label>Login</label>
                 <input type="text" name="login" required/>
                 <label>Password</label>
