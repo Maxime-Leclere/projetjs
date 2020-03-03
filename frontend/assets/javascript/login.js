@@ -1,8 +1,8 @@
 (function () {
     "use strict";
     $(() => {
-        $('#message').fadeOut();
         $('#form_login').submit(function () {
+            $('#message').fadeOut();
             $.ajax({
                 url: $(this).attr('action'),
                 method: $(this).attr('method'),
