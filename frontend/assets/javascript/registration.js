@@ -2,7 +2,6 @@
     "use strict";
     $(() => {
         $('#form_registration').submit(function () {
-            alert("bonjour");
             $('#message_login').fadeOut();
             $('#message_password').fadeOut();
 
@@ -12,6 +11,8 @@
                 data: $(this).serialize()
             })
             .done(function (data) {
+                alert("bonjour");
+                /*
                 if (data.hasOwnProperty('success')) {
                     if (data.success === true) {
                         window.location.href = '/frontend/home.php';
@@ -26,6 +27,7 @@
                     // should never happen!!!
 
                 }
+                */
             })
             .fail(function () {
                 $('body').html("une erreur critique est arrivée");
