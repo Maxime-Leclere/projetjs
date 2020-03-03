@@ -8,7 +8,7 @@
             data: $(this).serialize()
         })
         .done(function (data) {
-            if (data.hasOwnProperty('success') {
+            if (data.hasOwnProperty('success')) {
                 if (data.success === true) {
                     window.location.href = '/';
                 } else {
