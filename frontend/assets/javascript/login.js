@@ -7,11 +7,16 @@
             method: $(this).attr('method'),
             data: $(this).serialize()
         })
-        .done(function () {
-            if (data.success == true) {
-                window.location.href = '/';
+        .done(function (data) {
+            if (data.hasOwnProperty('success') {
+                if (data.success === true) {
+                    window.location.href = '/';
+                } else {
+                    $('#message').html(data.message).fadeIn();
+                }
             } else {
-                $('#message').html(data.message).fadeIn();
+                // should never happen!!!
+
             }
         })
         .fail(function () {
