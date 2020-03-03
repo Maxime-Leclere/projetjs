@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <?= include 'head.php' ?>
+        <script src="assets/javascript/login.js"></script>
+    </head>
+    <body>
+        <?= include 'header.php'?>
+        <main id="main">
+            <h1>Connexion</h1>
+            <form id="form_login" action="../backend/json/login.php" method="post">
+                <label>Login</label>
+                <input type="text" name="login" required/>
+                <label>Password</label>
+                <input type="password" name="password" required/>
+                <input type="submit"/>
+                <a href="registration.html">Vous n'avez pas de compte? Inscriver-vous ici.</a>
+            </form>
+        </main>
+    </body>
+</html>
