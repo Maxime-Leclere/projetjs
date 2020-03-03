@@ -1,8 +1,8 @@
 (function () {
     "use strict";
-    alert("bonjour");
     $(() => {
         $('#form_registration').submit(function () {
+            alert("bonjour");
             $('#message_login').fadeOut();
             $('#message_password').fadeOut();
 
@@ -30,8 +30,8 @@
             .fail(function () {
                 $('body').html("une erreur critique est arrivée");
             });
-            return false;
 
+            return false;
         });
     });
 })();
