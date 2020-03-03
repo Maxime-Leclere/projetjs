@@ -14,7 +14,7 @@
                 <label>Password</label>
                 <input type="password" name="password" required/>
                 <input type="submit"/>
-                <a href="registration.html">Vous n'avez pas de compte? Inscriver-vous ici.</a>
+                <a href="registration.php">Vous n'avez pas de compte? Inscriver-vous ici.</a>
             </form>
         </main>
     </body>

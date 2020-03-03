@@ -14,7 +14,7 @@
                 <input type="password" name="password" required/>
                 <input type="submit"/>
             </form>
-            <a href="login.html">Vous avez un compte? Connectez-vous ici.</a>
+            <a href="login.php">Vous avez un compte? Connectez-vous ici.</a>
         </main>
     </body>
 </html>
