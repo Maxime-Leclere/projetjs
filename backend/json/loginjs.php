@@ -4,10 +4,12 @@ session_start();
 $obj = new stdClass();
 $obj->success = false;
 $obj->message = 'nom d\'utilisateur ou mot de passe incorrect...';
+$login = $__POST['login'];
+$password = $__POST['password'];
 
 $found = null;
 // php a rempli $__POST[username] et $__POST[password]
-if($__POST['login'] == "momo" && $__POST['password'] == "lolo") {
+if($login == "momo" && $password == "lolo") {
     $found = true; // trouver en base et ok
 } else {
     $found = false;
