@@ -4,7 +4,7 @@
         $('#message').fadeOut();
         $.ajax({
             url: $(this).attr('action'),
-            method: $(this).method('post'),
+            method: $(this).attr('method'),
             data: $(this).serialize()
         })
         .done(function () {
