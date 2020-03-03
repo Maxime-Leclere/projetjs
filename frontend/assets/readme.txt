@@ -1,1 +1,0 @@
-toute les ressources du projet

@@ -14,9 +14,7 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
         $found = true; // trouver en base et ok
     } else {
         $found = false;
-    }
-
-    if ($found) {
+    } if ($found) {
         $obj->success = true;
         $_SESSION['user'] = 123; // normalement c'est $__POST[username]
     }
