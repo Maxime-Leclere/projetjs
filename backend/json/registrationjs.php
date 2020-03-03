@@ -18,7 +18,7 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
     //     $obj->error["#message_login"] = "le login est déjà utilisé";
     // }
 
-    if (is_null($obj->error)) {
+    if (isset($obj->error)) {
         // on insere dans la base de donné si il n'y a pas d'erreur
         $obj->success = true;
         $_SESSION['user'] = 123; // normalement c'est $__POST[username]
