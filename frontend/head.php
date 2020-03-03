@@ -5,3 +5,4 @@
 <meta name="author" content="Maxime Leclere">
 <link rel="stylesheet" href="assets/main.css">
 <link rel="icon" type="image/jpg" href="assets/img/cocktail.jpg">
+<script src="assets/javascript/jquery-3.4.1.min.js"></script>
