@@ -5,15 +5,12 @@
             $('#message_login').fadeOut();
             $('#message_password').fadeOut();
 
-            alert("1");
             $.ajax({
                 url: $(this).attr('action'),
-                method: $(this).method('post'),
+                method: $(this).attr('method'),
                 data: $(this).serialize()
             })
             .done(function (data) {
-                alert("2");
-                /*
                 if (data.hasOwnProperty('success')) {
                     if (data.success === true) {
                         window.location.href = '/frontend/home.php';
@@ -28,7 +25,6 @@
                     // should never happen!!!
 
                 }
-                */
             })
             .fail(function () {
                 $('body').html("une erreur critique est arrivée");
