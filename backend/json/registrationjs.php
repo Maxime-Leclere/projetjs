@@ -26,8 +26,8 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
 
     if (!sizeof($obj->error)) {
         // on insere dans la base de donné si il n'y a pas d'erreur
-        $reqI = $db->prepare('INSERT INTO `UTILISATEUR`(`login`, `password`)
-                            VALUES ("'.$login.'", "'.$password.'")');
+        $reqI = $db->prepare("INSERT INTO `UTILISATEUR`(`login`, `password`)
+                            VALUES (\"$login\", \"$password\")");
         $reqI->execute();
         $obj->success = true;
         $_SESSION['user'] = $login;
