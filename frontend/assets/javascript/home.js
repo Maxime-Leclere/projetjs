@@ -25,15 +25,15 @@
                                     $('<button>Créer ingredient</button>'),
                                     $('<button>Créer unité</button>'),
                                     $('<button>Créer cocktail</button>'));
-                    $.ajax({
-                        
-                    })
-                    .done(function () {
-
-                    })
-                    .fail(function () {
-                        $('body').html("une erreur critique est arrivée");
-                    });
+                    // $.ajax({
+                    //
+                    // })
+                    // .done(function () {
+                    //
+                    // })
+                    // .fail(function () {
+                    //     $('body').html("une erreur critique est arrivée");
+                    // });
                 } else {
                     window.location.href = '/frontend/login.php';
                 }
