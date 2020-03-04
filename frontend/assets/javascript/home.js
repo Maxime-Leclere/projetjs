@@ -14,7 +14,7 @@
                                                     url: '/backend/json/logoutjs.php',
                                                     method: 'get'
                                                 })
-                                                .done(function (data) {
+                                                .done(function () {
                                                     window.location.href = '/frontend/login.php';
                                                 })
                                                 .fail(function () {
