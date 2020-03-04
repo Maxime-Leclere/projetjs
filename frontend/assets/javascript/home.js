@@ -21,10 +21,19 @@
                                                     $('body').html("une erreur critique est arrivée");
                                                 });
                                             }),
+                                    $('<button>Rechercher</button>'),
                                     $('<button>Créer ingredient</button>'),
                                     $('<button>Créer unité</button>'),
                                     $('<button>Créer cocktail</button>'));
-                    $('#main').append();
+                    $.ajax({
+                        
+                    })
+                    .done(function () {
+
+                    })
+                    .fail(function () {
+                        $('body').html("une erreur critique est arrivée");
+                    });
                 } else {
                     window.location.href = '/frontend/login.php';
                 }
