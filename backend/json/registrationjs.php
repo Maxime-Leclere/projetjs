@@ -1,4 +1,5 @@
 <?php
+use PDOFactory;
 session_start();
 
 $obj = new stdClass();
