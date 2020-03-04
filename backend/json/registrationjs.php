@@ -1,5 +1,5 @@
 <?php
-use backend\PDOFactory;
+require_once '../PDOFactory.php';
 session_start();
 
 $obj = new stdClass();
