@@ -12,7 +12,7 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
 
     $db = PDOFactory::getConnexion();
     $req = $db->prepare('SELECT id, login, password FROM utilisateur
-                WHERE login = "$login"');
+                WHERE login = "'.$login.'"');
     $req->execute();
     $result = $req->fetchAll();
 
@@ -27,7 +27,7 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
     if (!sizeof($obj->error)) {
         // on insere dans la base de donné si il n'y a pas d'erreur
         $reqI = $db->prepare('INSERT INTO `UTILISATEUR`(`login`, `password`)
-                            VALUES ("$login", "$password")');
+                            VALUES ("'.$login.'", "'.$password.'")');
         $reqI->execute();
         $obj->success = true;
         $_SESSION['user'] = $login;
