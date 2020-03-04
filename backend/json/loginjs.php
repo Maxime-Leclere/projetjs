@@ -1,4 +1,5 @@
 <?php
+use PDOFactory;
 session_start();
 
 $obj = new stdClass();
@@ -9,14 +10,15 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
     $login = $_POST['login'];
     $password = $_POST['password'];
 
-    // php a rempli $__POST[username] et $__POST[password]
-    if($login == "momo" && $password == "lolo") {
-        $found = true; // trouver en base et ok
-    } else {
-        $found = false;
-    } if ($found) {
+    $db = PDOFactory::getConnexion();
+    $req = $db->prepare('SELECT id, login, password FROM utilisateur
+                WHERE login = "$login" AND password = "$password"')
+    $req->execute();
+    $result = $req->fetchAll();
+
+    if (sizeof($result)) {
         $obj->success = true;
-        $_SESSION['user'] = 123; // normalement c'est $__POST[username]
+        $_SESSION['user'] = $login;
     }
 }
 

@@ -1,4 +1,5 @@
 <?php
+namespace backend;
 
 class PDOFactory {
     static function getConnexion() {

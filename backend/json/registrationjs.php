@@ -9,19 +9,27 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
     $login = $_POST['login'];
     $password = $_POST['password'];
 
+    $db = PDOFactory::getConnexion();
+    $req = $db->prepare('SELECT id, login, password FROM utilisateur
+                WHERE login = "$login"')
+    $req->execute();
+    $result = $req->fetchAll();
+
     if (strlen($login) > 10) {
         $obj->error["#message_login"] = "le login ne peut avoir que 10 caractères";
     } if (strlen($password) < 8) {
         $obj->error["#message_password"] = "le password doit avoir plus de 8 caractères";
+    } if(sizeof($result)) {
+        $obj->error["#message_login"] = "le login est déjà utilisé";
     }
-    // if(/* on verifie si le login est dans la base de donnée*/) {
-    //     $obj->error["#message_login"] = "le login est déjà utilisé";
-    // }
 
-    if (!count($obj->error)) {
+    if (!sizeof($obj->error)) {
         // on insere dans la base de donné si il n'y a pas d'erreur
+        $reqI = $db->prepare('INSERT INTO `UTILISATEUR`(`login`, `password`)
+                            VALUES ("$login", "$password")');
+        $reqI->execute();
         $obj->success = true;
-        $_SESSION['user'] = 123; // normalement c'est $__POST[username]
+        $_SESSION['user'] = $login;
     }
 }
 

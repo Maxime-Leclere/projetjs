@@ -24,6 +24,7 @@
                                     $('<button>Créer ingredient</button>'),
                                     $('<button>Créer unité</button>'),
                                     $('<button>Créer cocktail</button>'));
+                    $('#main').append();
                 } else {
                     window.location.href = '/frontend/login.php';
                 }

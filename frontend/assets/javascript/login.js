@@ -17,7 +17,6 @@
                     }
                 } else {
                     // should never happen!!!
-
                 }
             })
             .fail(function () {
