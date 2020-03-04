@@ -11,7 +11,7 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
 
     $db = PDOFactory::getConnexion();
     $req = $db->prepare("SELECT id, login, password FROM UTILISATEUR
-                WHERE login = "$login" AND password = "$password"");
+                WHERE login = \"$login\" AND password = \"$password\"");
     $req->execute();
     $result = $req->fetchAll();
 
