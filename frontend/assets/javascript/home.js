@@ -25,15 +25,26 @@
                                     $('<button>Créer ingredient</button>'),
                                     $('<button>Créer unité</button>'),
                                     $('<button>Créer cocktail</button>'));
-                    // $.ajax({
-                    //
-                    // })
-                    // .done(function () {
-                    //
-                    // })
-                    // .fail(function () {
-                    //     $('body').html("une erreur critique est arrivée");
-                    // });
+                    $.ajax({
+                        url: '/backend/json/allRecipe.php',
+                        method: 'get'
+                    })
+                    .done(function (data) {
+                        if (data.listRecipe.hasOwnProperty('recipe')) {
+                            if (recipe.size() != 0) {
+                                for (let recipe in data.listRecipe) {
+                                    let recipeDiv = $('<div id="recipe'+ recipe.idC +'"></div>')
+                                }
+
+                            } else {
+                                $("#list_cocktail").html("Aucune recette de
+                                    cocktail est enregistrée");
+                            }
+                        }
+                    })
+                    .fail(function () {
+                        $('body').html("une erreur critique est arrivée");
+                    });
                 } else {
                     window.location.href = '/frontend/login.php';
                 }
