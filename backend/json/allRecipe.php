@@ -12,7 +12,7 @@ $req = $db->prepare("SELECT * FROM `COCKTAILINGREDIENTUNIT` R, COCKTAIL C,
 
 $req->execute();
 $data = $req->fetchAll();
-echo $data;
+print_r( $data);
 if(sizeof($data) != 0) {
     $idInter = 0;
     for ($i=0; $i < sizeof($data); $i++) {
