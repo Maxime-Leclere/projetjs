@@ -30,7 +30,7 @@
                         method: 'get'
                     })
                     .done(function (data) {
-                        if (data.listRecipe.hasOwnProperty('recipe')) {
+                        if (data.hasOwnProperty('listRecipe')) {
                             if (recipe.size() != 0) {
                                 for (let recipe in data.listRecipe) {
                                     let recipeDiv = $('<div id="recipe'+ recipe.idC +'"></div>')
