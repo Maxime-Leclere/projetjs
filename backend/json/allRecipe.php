@@ -19,7 +19,7 @@ if(sizeof($data) != 0) {
         if ($idInter  == $data[$i]['idC']) {
             $listRecipe->recipe[$idInter] = array($data[$i]['idC'], $data[$i]['title'],
                 $data[$i]['description_C'], $data[$i]['detail'], 'ingredients' => array(
-                    $data[$i]['idI'] => array(array(
+                    $data[$i]['id_I'] => array(array(
                     $data[$i]['idI'], $data[$i]['description_I']), array(
                     $data[$i]['idU'], $data[$i]['description_U']), $data[$i]['quantity'])));
         } else {
@@ -30,9 +30,9 @@ if(sizeof($data) != 0) {
     }
 }
 
-// header('Cache-Control: no-cache, must-revalidate');
-// header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
-// header('Content-type: application/json');
+header('Cache-Control: no-cache, must-revalidate');
+header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
+header('Content-type: application/json');
 
 
-echo json_encode($listRecipe);
+// echo json_encode($listRecipe);
