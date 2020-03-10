@@ -37,8 +37,7 @@
                                 }
 
                             } else {
-                                $("#list_cocktail").html("Aucune recette de
-                                    cocktail est enregistrée");
+                                $("#list_cocktail").html("Aucune recette cocktail est enregistrée");
                             }
                         }
                     })
