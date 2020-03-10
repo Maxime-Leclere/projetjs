@@ -19,9 +19,9 @@ if(sizeof($data) != 0) {
         if ($idInter  == $data[$i]['idC']) {
             $listRecipe->recipe[$idInter] = array($data[$i]['idC'], $data[$i]['title'],
                 $data[$i]['description_C'], $data[$i]['detail'], 'ingredients' => array(
-                    $data[$i]['idI'] => array(
+                    $data[$i]['idI'] => array( array(
                     $data[$i]['idI'], $data[$i]['description_I']), array(
-                    $data[$i]['idU'], $data[$i]['description_U']), $data[$i]['quantity']));
+                    $data[$i]['idU'], $data[$i]['description_U']), $data[$i]['quantity'])));
         } else {
             ++$idInter;
             --$i;
