@@ -14,7 +14,7 @@ $req->execute();
 $data = $req->fetchAll();
 
 if(sizeof($data) != 0) {
-    $idInter = 1;
+    $idInter = 0;
     for ($i=0; $i < sizeof($data); $i++) {
         if ($idInter  == $data[$i]['idC']) {
             $listRecipe->recipe[$idInter] = array($data[$i]['idC'], $data[$i]['title'],
