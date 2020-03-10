@@ -7,25 +7,24 @@ $listRecipe->recipe = array();
 $db = PDOFactory::getConnexion();
 
 $req = $db->prepare("SELECT * FROM `COCKTAILINGREDIENTUNIT` R, COCKTAIL C,
-    INGREDIENT I, UNIT U WHERE id_C = C.id and id_I = I.id and id_U = U.id
-    ORDER BY C.id");
+    INGREDIENT I, UNIT U WHERE id_C = C.idC and id_I = I.idI and id_U = U.idU
+    ORDER BY C.idC");
 
 $req->execute();
 $data = $req->fetchAll();
 
 if(sizeof($data) != 0) {
-    $listInter = array();
-    $idInter = 0;
+    $idInter = 1;
     for ($i=0; $i < sizeof($data); $i++) {
-        $idInter = $data[$i]['idC'];
-        if ($idInter  == $idInter-1) {
-
+        if ($idInter  == $data[$i]['idC']) {
+            $listRecipe->recipe[$idInter] = array($data[$i]['idC'], $data[$i]['title'],
+                $data[$i]['description_C'], $data[$i]['detail'], array(array(
+                    $data[$i]['idI'], $data[$i]['description_I']), array(
+                    $data[$i]['idU'], $data[$i]['description_U']), $data[$i]['quantity']));
         } else {
-
+            ++$idInter;
+            --$i;
         }
-        $listInter[] = array($data[$i]['idC'], $data[$i]['title'],
-            $data[$i]['description_C'], $data[$i]['detail'], $data[$i]['idI'],
-            $data[$i]['description_I'], $data[$i]['idU'], $data[$i]['description_U']);
 
     }
 }

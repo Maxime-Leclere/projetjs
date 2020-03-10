@@ -1,6 +1,6 @@
 (function () {
     "use strict";
-    $(() => {
+    (() => {
         $.ajax({
             url: '/backend/json/is_connectedjs.php',
             method: 'get'
