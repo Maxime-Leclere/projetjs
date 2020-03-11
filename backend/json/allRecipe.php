@@ -22,9 +22,12 @@ if(sizeof($data) != 0) {
                 array_push($listRecipe->recipe[$idInter]['ingredients'], array(array(
                     $data[$i]['idI'], $data[$i]['description_I']), array(
                     $data[$i]['idU'], $data[$i]['description_U']), $data[$i]['quantity']));
+                    echo "yes ".$i." ".$idInter;
         } else {
             $idInter++;
             $i--;
+            echo "no ".$i." ".$idInter;
+
         }
 
     }
