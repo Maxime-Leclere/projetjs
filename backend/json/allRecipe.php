@@ -15,7 +15,7 @@ $data = $req->fetchAll();
 if(sizeof($data) != 0) {
     $idCocktail = 1;
     for ($i=0; $i < sizeof($data); $i++) {
-        if ($idCocktail  == intval($data[$i]['idC'])) {
+        if ($idCocktail  === intval($data[$i]['idC'])) {
             $listRecipe->recipe[$idCocktail] = array($data[$i]['idC'], $data[$i]['title'],
                 $data[$i]['description_C'], $data[$i]['detail'], "ingredients" => array(
                     $i => array(array(
