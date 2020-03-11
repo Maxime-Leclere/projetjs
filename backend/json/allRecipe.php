@@ -17,7 +17,9 @@ if(sizeof($data) != 0) {
     for ($i=0; $i < sizeof($data); $i++) {
         if ($idCocktail  === intval($data[$i]['idC'])) {
             $listRecipe->recipe[$idCocktail] = array($data[$i]['idC'], $data[$i]['title'],
-                $data[$i]['description_C'], $data[$i]['detail'], "ingredients" => array(
+                $data[$i]['description_C'], $data[$i]['detail'], "ingredients" => array());
+                // array_push($listRecipe->recipe[$idCocktail][])
+                $listRecipe->recipe[$idCocktail]['ingredients'][] =
                     $i => array(array(
                     $data[$i]['idI'], $data[$i]['description_I']), array(
                     $data[$i]['idU'], $data[$i]['description_U']), $data[$i]['quantity'])));
