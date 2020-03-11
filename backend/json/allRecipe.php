@@ -21,12 +21,12 @@ if(sizeof($data) != 0) {
                     $i => array(array(
                     $data[$i]['idI'], $data[$i]['description_I']), array(
                     $data[$i]['idU'], $data[$i]['description_U']), $data[$i]['quantity'])));
-                    echo "yes ".$i." ".$idCocktail;
+                    echo "yes ".$data[$i]['idC']." ".$idCocktail;
                 print_r($listRecipe->recipe[$idCocktail]['ingredients']);
         } else {
             $idCocktail++;
             $i--;
-            echo "no ".$i." ".$idCocktail;
+            echo "no ".$data[$i]['idC']." ".$idCocktail;
 
         }
 
