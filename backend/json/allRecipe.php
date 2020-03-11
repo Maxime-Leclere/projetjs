@@ -21,9 +21,9 @@ if(sizeof($data) != 0) {
 
                 // array_push($listRecipe->recipe[$idCocktail]['ingredients'],
                 $listRecipe->recipe[$idCocktail]['ingredients'][] =
-                    array(array(
+                    array(
                     $data[$i]['idI'], $data[$i]['description_I']), array(
-                    $data[$i]['idU'], $data[$i]['description_U']), $data[$i]['quantity']);
+                    $data[$i]['idU'], $data[$i]['description_U']), $data[$i]['quantity'];
                     echo "yes ".$data[$i]['idC']." ".$idCocktail;
                 print_r($listRecipe->recipe[$idCocktail]['ingredients']);
                 echo "\n";
