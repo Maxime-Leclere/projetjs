@@ -31,7 +31,9 @@ if(sizeof($data) != 0) {
                 print_r($listRecipe->recipe);
                 echo "\n";
         } else {
-            $listRecipe->recipe[$idCocktail]['ingredients'][] = $ingredients;
+            foreach ($ingredients as $key => $value) {
+                $listRecipe->recipe[$idCocktail]['ingredients'][] = $value;
+            }
             $ingredients = array();
             $idCocktail++;
             $i--;
