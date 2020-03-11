@@ -15,7 +15,7 @@ $data = $req->fetchAll();
 if(sizeof($data) != 0) {
     $idInter = -1;
     for ($i=0; $i < sizeof($data); $i++) {
-        if ($idInter  == $data[$i]['idC'] || $idInter == 0 {
+        if ($idInter  == $data[$i]['idC'] || $idInter == 0) {
             $listRecipe->recipe[$idInter] = array($data[$i]['idC'], $data[$i]['title'],
                 $data[$i]['description_C'], $data[$i]['detail'], 'ingredients' => array());
                 // [] = /*$data[$i]['id_I'] =>*/
