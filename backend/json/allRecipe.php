@@ -26,7 +26,9 @@ if(sizeof($data) != 0) {
                     $data[$i]['idU'], $data[$i]['description_U']), $data[$i]['quantity']));
                     echo "yes ".$data[$i]['idC']." ".$idCocktail;
                 print_r($listRecipe->recipe[$idCocktail]['ingredients']);
+                echo "\n";
                 print_r($listRecipe->recipe);
+                echo "\n";
         } else {
             $idCocktail++;
             $i--;
