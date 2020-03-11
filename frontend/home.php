@@ -7,12 +7,8 @@
     <body>
         <?php require_once 'header.php'?>
         <main id="main">
-            <div id="form_home">
-
-            </div>
-            <div id="list_cocktail">
-
-            </div>
+            <div id="form_home"></div>
+            <div id="list_cocktail"></div>
         </main>
     </body>
 </html>
