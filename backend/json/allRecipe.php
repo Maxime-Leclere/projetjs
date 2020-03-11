@@ -14,22 +14,25 @@ $req->execute();
 $data = $req->fetchAll();
 if(sizeof($data) != 0) {
     $idCocktail = 1;
+    $ingredients = array();
     for ($i=0; $i < sizeof($data); $i++) {
         $listRecipe->recipe[$idCocktail] = array($data[$i]['idC'], $data[$i]['title'],
             $data[$i]['description_C'], $data[$i]['detail'], "ingredients" => array());
         if ($idCocktail  === intval($data[$i]['idC'])) {
 
                 // array_push($listRecipe->recipe[$idCocktail]['ingredients'],
-                $listRecipe->recipe[$idCocktail]['ingredients'][] =
-                    array(
+                $ingredients[] =
+                    array(array(
                     $data[$i]['idI'], $data[$i]['description_I']), array(
-                    $data[$i]['idU'], $data[$i]['description_U']), $data[$i]['quantity'];
+                    $data[$i]['idU'], $data[$i]['description_U']), $data[$i]['quantity']));
                     echo "yes ".$data[$i]['idC']." ".$idCocktail;
-                print_r($listRecipe->recipe[$idCocktail]['ingredients']);
+                print_r($ingredients);
                 echo "\n";
                 print_r($listRecipe->recipe);
                 echo "\n";
         } else {
+            array_push($listRecipe->recipe[$idCocktail], $ingredients);
+            $ingredients = array();
             $idCocktail++;
             $i--;
             echo "no ".$data[$i]['idC']." ".$idCocktail;
