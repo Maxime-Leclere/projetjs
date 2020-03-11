@@ -17,10 +17,10 @@ if(sizeof($data) != 0) {
     for ($i=0; $i < sizeof($data); $i++) {
         if ($idCocktail  == intval($data[$i]['idC']) || $idInter == 0) {
             $listRecipe->recipe[$idCocktail] = array($data[$i]['idC'], $data[$i]['title'],
-                $data[$i]['description_C'], $data[$i]['detail'], "$i" => array(
+                $data[$i]['description_C'], $data[$i]['detail'], $i => array(
                     array(array(
                     $data[$i]['idI'], $data[$i]['description_I']), array(
-                    $data[$i]['idU'], $data[$i]['description_U']), $data[$i]['quantity']));
+                    $data[$i]['idU'], $data[$i]['description_U']), $data[$i]['quantity'])));
                     echo "yes ".$i." ".$idCocktail;
                 print_r($listRecipe->recipe[$idCocktail]['ingredients']);
         } else {
