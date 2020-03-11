@@ -23,8 +23,8 @@ if(sizeof($data) != 0) {
                     $data[$i]['idI'], $data[$i]['description_I']), array(
                     $data[$i]['idU'], $data[$i]['description_U']), $data[$i]['quantity']));
         } else {
-            ++$idInter;
-            --$i;
+            $idInter++;
+            $i--;
         }
 
     }
