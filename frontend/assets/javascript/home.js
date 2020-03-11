@@ -34,7 +34,7 @@
                             if (recipe.size() != 0) {
                                 console.log("recipe >0");
                                 for (let recipe in data.listRecipe.recipe) {
-                                    let recipeDiv = $('<div id="recipe'+ recipe.idC +'"></div>')
+                                    let recipeDiv = $('<div id="recipe'+ recipe[0] +'"></div>')
                                         .append($('<h2>'+ recipe[1] +'</h2>'));
                                     $('#list_cocktail').append(recipeDiv);
                                 }
