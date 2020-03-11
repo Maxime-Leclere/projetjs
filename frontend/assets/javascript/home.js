@@ -32,8 +32,11 @@
                     .done(function (data) {
                         if (data.hasOwnProperty('listRecipe')) {
                             if (recipe.size() != 0) {
-                                for (let recipe in data.listRecipe) {
+                                console.log("recipe >0");
+                                for (let recipe in data.listRecipe.recipe) {
                                     let recipeDiv = $('<div id="recipe'+ recipe.idC +'"></div>')
+                                        .append($('<h2>'+ recipe[1] +'</h2>'));
+                                    $('#list_cocktail').append(recipeDiv);
                                 }
 
                             } else {

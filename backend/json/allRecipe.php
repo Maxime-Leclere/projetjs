@@ -21,15 +21,10 @@ if(sizeof($data) != 0) {
         if ($idCocktail  === intval($data[$i]['idC'])) {
 
                 // array_push($listRecipe->recipe[$idCocktail]['ingredients'],
-                $ingredients[] =
-                    array(array(
-                    $data[$i]['idI'], $data[$i]['description_I']), array(
-                    $data[$i]['idU'], $data[$i]['description_U']), $data[$i]['quantity']);
-                    echo "yes ".$data[$i]['idC']." ".$idCocktail;
-                print_r($ingredients);
-                echo "\n";
-                print_r($listRecipe->recipe);
-                echo "\n";
+            $ingredients[] = array(array(
+            $data[$i]['idI'], $data[$i]['description_I']), array(
+            $data[$i]['idU'], $data[$i]['description_U']), $data[$i]['quantity']);
+
         } else {
             foreach ($ingredients as $key => $value) {
                 // $listRecipe->recipe[$idCocktail]['ingredients'][] = $value;
@@ -38,8 +33,6 @@ if(sizeof($data) != 0) {
             $ingredients = array();
             $idCocktail++;
             $i--;
-            echo "no ".$data[$i]['idC']." ".$idCocktail;
-
         }
 
     }
