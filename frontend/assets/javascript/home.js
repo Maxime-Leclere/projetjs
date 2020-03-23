@@ -25,18 +25,18 @@
 
                                     }),
                                     $('<button>Créer ingredient</button>').click(function () {
-                                        $('.form_home').fadeOut();
+                                        $('.form_home').hide();
                                         $('#form_ingr').fadeIn();
                                     }),
                                     $('<button>Créer unité</button>').click(function () {
-                                        $('.form_home').fadeOut();
+                                        $('.form_home').hide();
                                         $('#form_unit').fadeIn();
                                     }),
                                     $('<button>Créer cocktail</button>').click(function () {
-                                        $('.form_home').fadeOut();
+                                        $('.form_home').hide();
                                         $('#form_cocktail').fadeIn();
                                     }));
-                    $('.form_home').fadeOut();
+                    $('.form_home').hide();
                     $.ajax({
                         url: '/backend/json/allCocktail.php',
                         method: 'get'
