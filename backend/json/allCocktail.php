@@ -6,8 +6,9 @@ $listCocktail->cocktail = array();
 
 $db = PDOFactory::getConnexion();
 
-$req = $db->prepare("SELECT * FROM `COCKTAILINGREDIENTUNIT` R, COCKTAIL C,
-    INGREDIENT I, UNIT U WHERE id_C = C.idC ORDER BY C.idC");
+$req = $db->prepare("SELECT C.idC, C.title, C.description_C, C.detail
+                    FROM `COCKTAILINGREDIENTUNIT` R, COCKTAIL C
+                    WHERE id_C = C.idC ORDER BY C.idC");
 
 $req->execute();
 $data = $req->fetchAll();
@@ -47,4 +48,3 @@ if(sizeof($data) != 0) {
 
 
 echo json_encode($listCocktail);
-echo sizeof($data);
