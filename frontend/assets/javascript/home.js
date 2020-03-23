@@ -42,6 +42,9 @@
                             } else {
                                 $("#list_cocktail").html("Aucune recette cocktail est enregistrée");
                             }
+                        } else {
+                            $("#list_cocktail").html("listRecipe n'existe pas.");
+
                         }
                     })
                     .fail(function () {
