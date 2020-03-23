@@ -15,7 +15,7 @@ if(sizeof($data) != 0) {
     $idCocktail = 1;
     $ingredients = array();
     for ($i=0; $i < sizeof($data); $i++) {
-        $listCocktail->cocktail[/*$idCocktail*/] = array($data[$i]['idC'], $data[$i]['title'],
+        $listCocktail->cocktail[/*$idCocktail*/$i] = array($data[$i]['idC'], $data[$i]['title'],
             $data[$i]['description_C'], $data[$i]['detail']);//, "ingredients" => array());
     //     if ($idCocktail  === intval($data[$i]['idC'])) {
     //
@@ -47,3 +47,4 @@ header('Content-type: application/json');
 
 
 echo json_encode($listCocktail);
+echo sizeof($data);
