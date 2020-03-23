@@ -30,10 +30,10 @@
                         method: 'get'
                     })
                     .done(function (data) {
-                        if (data.hasOwnProperty('listRecipe')) {
-                            if (data.listRecipe.recipe.size() != 0) {
+                        if (data.hasOwnProperty('recipe')) {
+                            if (data.recipe.size() != 0) {
                                 console.log("recipe >0");
-                                for (let recipe in data.listRecipe.recipe) {
+                                for (let recipe in data.recipe) {
                                     let recipeDiv = $('<div id="recipe'+ recipe[0] +'"></div>')
                                         .append($('<h2>'+ recipe[1] +'</h2>'));
                                     $('#list_cocktail').append(recipeDiv);
@@ -43,7 +43,7 @@
                                 $("#list_cocktail").html("Aucune recette cocktail est enregistrée");
                             }
                         } else {
-                            $("#list_cocktail").html("listRecipe n'existe pas.");
+                            $("#list_cocktail").html("recipe n'existe pas.");
 
                         }
                     })
