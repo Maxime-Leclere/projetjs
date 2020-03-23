@@ -38,6 +38,7 @@
                                     console.log(recipe[1]);
                                     console.log(recipe[2]);
                                     console.log(recipe[3]);
+                                    console.log(recipe);
 
                                     let recipeDiv = $('<div id="recipe'+ recipe[0] +'"></div>')
                                         .append($('<h2>'+ recipe[1] +'</h2>'));
