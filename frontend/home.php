@@ -36,6 +36,6 @@
             <div id="list_cocktail"></div>
         </main>
     </body>
-    <script src="assets/javascript/home.js"></script>
 
 </html>
+<script src="assets/javascript/home.js"></script>
