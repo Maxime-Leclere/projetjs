@@ -46,7 +46,7 @@
                                                 if (dataC.hasOwnProperty('recipe')) {
                                                     let listIngredient = $('<ul/>');
                                                     for (let ingredient in dataC.recipe[1].ingredients) {
-                                                        listIngredient.append($('<li/>').html(ingredient[0][1] + " : " + ingredient[2] + " " + ingredient[1][1]));
+                                                        listIngredient.append($('<li/>').html(ingredient[0][1] + " : " + ingredient[2] + " " + ingredient[1][1] + ""));
                                                     }
                                                     $('#recipe'+ data.cocktail[cocktail][0])
                                                         .append($('<p>'+ data.cocktail[cocktail][2] +'</p>'),
