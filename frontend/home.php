@@ -2,6 +2,7 @@
 <html lang="fr">
     <head>
         <?php require_once 'head.php' ?>
+        <script src="assets/javascript/home.js"></script>
     </head>
     <body>
         <?php require_once 'header.php'?>
@@ -28,7 +29,8 @@
                     <label>Description</label>
                     <textarea name="detail"></textarea><br>
                     <div id="listIngredient">
-                        <ul id="listC"></ul>
+                        <li>couocu</li>
+                        <ul id="listI"></ul>
                     </div><br>
                     <input type="submit" value="Envoyer">
                 </form>
@@ -36,6 +38,4 @@
             <div id="list_cocktail"></div>
         </main>
     </body>
-
 </html>
-<script src="assets/javascript/home.js"></script>
