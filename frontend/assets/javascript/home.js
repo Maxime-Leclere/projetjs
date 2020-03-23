@@ -34,8 +34,8 @@
                             if (data.cocktail.length != 0) {
                                 console.log("cocktail > 0");
                                 for (let cocktail in data.cocktail) {
-                                    let recipeDiv = $('<div id="recipe'+ data.cocktail[recipe][0] +'"></div>')
-                                        .append($('<h2>'+ data.cocktail[recipe][1] +'</h2>'));
+                                    let recipeDiv = $('<div id="recipe'+ data.cocktail[cocktail][0] +'"></div>')
+                                        .append($('<h2>'+ data.cocktail[cocktail][1] +'</h2>'));
                                     $('#list_cocktail').append(recipeDiv);
                                 }
 
@@ -43,7 +43,7 @@
                                 $("#list_cocktail").html("Aucune recette de cocktail est enregistrée");
                             }
                         } else {
-                            $("#list_cocktail").html("recipe n'existe pas. donc bug à corriger");
+                            $("#list_cocktail").html("cocktail n'existe pas. donc bug à corriger");
 
                         }
                     })
