@@ -34,7 +34,7 @@ if(sizeof($data) != 0) {
     //         $i--;
     //     }
     //
-    // }
+    }
     // foreach ($ingredients as $key => $value) {
     //     // $listCocktail->cocktail[$idCocktail]['ingredients'][] = $value;
     //     array_push($listCocktail->cocktail[$idCocktail]['ingredients'], $value);
