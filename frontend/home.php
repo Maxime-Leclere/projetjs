@@ -28,12 +28,7 @@
                     <input type="text" name="description_C"><br>
                     <label>Description</label>
                     <textarea name="detail"></textarea><br>
-                    <div id="listIngredient">
-                        <li>couocu</li>
-                        <ul id="listI">
-                            <li>dsdsds</li>
-                        </ul>
-                    </div><br>
+                    <ul id="listIngredient"></ul><br>
                     <input type="submit" value="Envoyer">
                 </form>
             </div>
