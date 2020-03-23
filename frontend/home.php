@@ -30,7 +30,9 @@
                     <textarea name="detail"></textarea><br>
                     <div id="listIngredient">
                         <li>couocu</li>
-                        <ul id="listI"></ul>
+                        <ul id="listI">
+                            <li>dsdsds</li>
+                        </ul>
                     </div><br>
                     <input type="submit" value="Envoyer">
                 </form>
