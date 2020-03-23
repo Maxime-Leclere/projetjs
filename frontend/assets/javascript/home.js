@@ -35,7 +35,30 @@
                                 console.log("cocktail > 0");
                                 for (let cocktail in data.cocktail) {
                                     let recipeDiv = $('<div id="recipe'+ data.cocktail[cocktail][0] +'"></div>')
-                                        .append($('<h2>'+ data.cocktail[cocktail][1] +'</h2>'));
+                                        .append($('<h2>'+ data.cocktail[cocktail][1] +'</h2>'))
+                                        .click(function () {
+                                            $.ajax({
+                                                url: '/backend/json/getRecipe.php',
+                                                method: 'post',
+                                                data: { idrecipe: data.cocktail[cocktail][0] }
+                                            })
+                                            .done(function (dataC) {
+                                                if (dataC.hasOwnProperty('recipe')) {
+                                                    let listIngredient = $('<ul/>');
+                                                    for (let ingredient in dataC.recipe[1].ingredients) {
+                                                        listIngredient.append($('<li/>').html(ingredient[0][1] + " : " + ingredient[2] + " " + ingredient[1][1]));
+                                                    }
+                                                    $('#recipe'+ data.cocktail[cocktail][0])
+                                                        .append($('<p>'+ data.cocktail[cocktail][2] +'</p>'),
+                                                            $('<p>'+ data.cocktail[cocktail][3] +'</p>'),
+                                                            listIngredient);
+                                                }
+                                            })
+                                            .fail(function () {
+                                                $('#recipe'+ data.cocktail[cocktail][0]).html("une erreur critique est arrivée");
+
+                                            });
+                                        });
                                     $('#list_cocktail').append(recipeDiv);
                                 }
 
