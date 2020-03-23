@@ -47,10 +47,7 @@
                                                     let listIngredient = $('<ul/>');
                                                     let list = dataC.recipe[1].ingredients;
                                                     for (let ingredient in list) {
-                                                        let ingr = ingredient[0];
-                                                        let unit = ingredient[1];
-                                                        let quantity = ingredient[2];
-                                                        listIngredient.append($('<li/>').html(ingr[1] + " : " + quantity + " " + unit[1] + ""));
+                                                        listIngredient.append($('<li/>').html(list[ingredient][0][1] + " : " + list[ingredient][2] + " " + list[ingredient][1][1]));
                                                     }
                                                     $('#recipe'+ data.cocktail[cocktail][0])
                                                         .append($('<p>'+ data.cocktail[cocktail][2] +'</p>'),
