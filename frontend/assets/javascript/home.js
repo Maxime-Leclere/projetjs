@@ -26,27 +26,21 @@
                                     $('<button>Créer unité</button>'),
                                     $('<button>Créer cocktail</button>'));
                     $.ajax({
-                        url: '/backend/json/allRecipe.php',
+                        url: '/backend/json/allCocktail.php',
                         method: 'get'
                     })
                     .done(function (data) {
-                        if (data.hasOwnProperty('recipe')) {
-                            if (data.recipe.length != 0) {
-                                console.log("recipe >0");
-                                for (let recipe in data.recipe) {
-                                    console.log(recipe[0]);
-                                    console.log(recipe[1]);
-                                    console.log(recipe[2]);
-                                    console.log(recipe[3]);
-                                    console.log(recipe);
-
-                                    let recipeDiv = $('<div id="recipe'+ data.recipe[recipe][0] +'"></div>')
-                                        .append($('<h2>'+ data.recipe[recipe][1] +'</h2>'));
+                        if (data.hasOwnProperty('cocktail')) {
+                            if (data.cocktail.length != 0) {
+                                console.log("cocktail > 0");
+                                for (let cocktail in data.cocktail) {
+                                    let recipeDiv = $('<div id="recipe'+ data.cocktail[recipe][0] +'"></div>')
+                                        .append($('<h2>'+ data.cocktail[recipe][1] +'</h2>'));
                                     $('#list_cocktail').append(recipeDiv);
                                 }
 
                             } else {
-                                $("#list_cocktail").html("Aucune recette cocktail est enregistrée");
+                                $("#list_cocktail").html("Aucune recette de cocktail est enregistrée");
                             }
                         } else {
                             $("#list_cocktail").html("recipe n'existe pas. donc bug à corriger");
