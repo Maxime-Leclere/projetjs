@@ -4,7 +4,7 @@ require_once '../PDOFactory.php';
 $listRecipe = new stdClass();
 $listRecipe->recipe = array();
 
-$idrecipe = $_POST['idrecipe']
+$idrecipe = $_POST['idrecipe'];
 
 $db = PDOFactory::getConnexion();
 
