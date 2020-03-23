@@ -36,7 +36,7 @@
                                 for (let cocktail in data.cocktail) {
                                     let recipeDiv = $('<div class="recipe" id="recipe'+ data.cocktail[cocktail][0] +'"></div>')
                                         .append($('<h2>'+ data.cocktail[cocktail][1] +'</h2>'))
-                                        .click(function () {
+                                        .one('click', function () {
                                             $.ajax({
                                                 url: '/backend/json/getRecipe.php',
                                                 method: 'post',
