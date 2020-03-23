@@ -21,18 +21,15 @@
                                                     $('body').html("une erreur critique est arrivée");
                                                 });
                                             }),
-                                    $('<button>Rechercher</button>').click(function () {
-
-                                    }),
-                                    $('<button>Créer ingredient</button>').click(function () {
+                                    $('<button>Créer Ingrédient</button>').click(function () {
                                         $('.form_home').hide();
                                         $('#form_ingr').fadeIn();
                                     }),
-                                    $('<button>Créer unité</button>').click(function () {
+                                    $('<button>Créer Unité</button>').click(function () {
                                         $('.form_home').hide();
                                         $('#form_unit').fadeIn();
                                     }),
-                                    $('<button>Créer cocktail</button>').click(function () {
+                                    $('<button>Créer Cocktail</button>').click(function () {
                                         $('.form_home').hide();
                                         $('#form_cocktail').fadeIn();
                                     }));
