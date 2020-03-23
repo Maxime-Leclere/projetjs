@@ -34,7 +34,7 @@
                             if (data.cocktail.length != 0) {
                                 console.log("cocktail > 0");
                                 for (let cocktail in data.cocktail) {
-                                    let recipeDiv = $('<div id="recipe'+ data.cocktail[cocktail][0] +'"></div>')
+                                    let recipeDiv = $('<div class="recipe" id="recipe'+ data.cocktail[cocktail][0] +'"></div>')
                                         .append($('<h2>'+ data.cocktail[cocktail][1] +'</h2>'))
                                         .click(function () {
                                             $.ajax({
@@ -47,7 +47,10 @@
                                                     let listIngredient = $('<ul/>');
                                                     let list = dataC.recipe[1].ingredients;
                                                     for (let ingredient in list) {
-                                                        listIngredient.append($('<li/>').html(ingredient[0][1] + " : " + ingredient[2] + " " + ingredient[1][1] + ""));
+                                                        let ingr = ingredient[0];
+                                                        let unit = ingredient[1];
+                                                        let quantity = ingredient[2];
+                                                        listIngredient.append($('<li/>').html(ingr[1] + " : " + quantity + " " + unit[1] + ""));
                                                     }
                                                     $('#recipe'+ data.cocktail[cocktail][0])
                                                         .append($('<p>'+ data.cocktail[cocktail][2] +'</p>'),
