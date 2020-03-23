@@ -21,10 +21,22 @@
                                                     $('body').html("une erreur critique est arrivée");
                                                 });
                                             }),
-                                    $('<button>Rechercher</button>'),
-                                    $('<button>Créer ingredient</button>'),
-                                    $('<button>Créer unité</button>'),
-                                    $('<button>Créer cocktail</button>'));
+                                    $('<button>Rechercher</button>').click(function () {
+
+                                    }),
+                                    $('<button>Créer ingredient</button>').click(function () {
+                                        $('.form_home').fadeOut();
+                                        $('#form_ingr').fadeIn();
+                                    }),
+                                    $('<button>Créer unité</button>').click(function () {
+                                        $('.form_home').fadeOut();
+                                        $('#form_unit').fadeIn();
+                                    }),
+                                    $('<button>Créer cocktail</button>').click(function () {
+                                        $('.form_home').fadeOut();
+                                        $('#form_cocktail').fadeIn();
+                                    }));
+                    $('.form_home').fadeOut();
                     $.ajax({
                         url: '/backend/json/allCocktail.php',
                         method: 'get'
