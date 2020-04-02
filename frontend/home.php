@@ -2,6 +2,8 @@
 <html lang="fr">
     <head>
         <?php require_once 'head.php' ?>
+        <script src="assets/javascript/unit.js"></script>
+        <script src="assets/javascript/ingredient.js"></script>
         <script src="assets/javascript/home.js"></script>
     </head>
     <body>
