@@ -47,7 +47,7 @@
                                                         listU.push(new Unit(item[0], item[1]));
                                                     }
                                                     console.log(listI[0].getName());
-                                                    console.log(listU);
+                                                    console.log(listU[0].getName());
                                                     let i = 0;
                                                     for (let ing in listI) {
                                                         let ingbalise = $('<li class="listitemIng" id"line'+i+'"></li>');
