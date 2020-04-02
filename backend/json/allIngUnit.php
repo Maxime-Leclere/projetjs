@@ -18,7 +18,7 @@ $dataU = $reqU->fetchAll();
 
 if(sizeof($dataI) != 0) {
     for ($i=0; $i < sizeof($dataI); $i++) {
-        $listIngrUnit->list["ingredient"][] = array($dataI[$i]["idU"], $dataI[$i]["description_I"]);
+        $listIngrUnit->list["ingredient"][] = array($dataI[$i]["idI"], $dataI[$i]["description_I"]);
     }
 }
 
