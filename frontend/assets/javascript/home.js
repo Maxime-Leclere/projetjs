@@ -37,7 +37,7 @@
                                         })
                                         .done(function (data) {
                                             if (data.hasOwnProperty('list')) {
-                                                if (data.list.length == 2) {
+                                                if (data.list.ingredient.length != 0) {
                                                     let listI = new Array();
                                                     let listU = new Array();
                                                     for (let item in data.list["ingredient"]) {

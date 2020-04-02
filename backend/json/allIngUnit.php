@@ -2,7 +2,7 @@
 require_once '../PDOFactory.php';
 
 $listIngrUnit = new stdClass();
-$listIngrUnit->list = array();
+$listIngrUnit->list = array("ingredient", "unite");
 
 $db = PDOFactory::getConnexion();
 
