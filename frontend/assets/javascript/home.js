@@ -40,11 +40,11 @@
                                                 if (data.list.ingredient.length != 0 || data.list.unite.length != 0) {
                                                     let listI = new Array();
                                                     let listU = new Array();
-                                                    for (let item in data.list["ingredient"]) {
-                                                        listI.push(new Ingredient(item[0], item[1]));
+                                                    for (let item in data.list.ingredient) {
+                                                        listI.push(new Ingredient(item[ingredient][0], item[ingredient][1]));
                                                     }
-                                                    for (let item in data.list["unite"]) {
-                                                        listU.push(new Unit(item[0], item[1]));
+                                                    for (let item in data.list.unite) {
+                                                        listU.push(new Unit(item[unite][0], item[unite][1]));
                                                     }
                                                     console.log(listI[0].getName());
                                                     console.log(listU[0].getName());
