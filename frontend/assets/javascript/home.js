@@ -46,6 +46,8 @@
                                                     for (let item in data.list.unite) {
                                                         listU.push(new Unit(item[0], item[1]));
                                                     }
+                                                    console.log(listI);
+                                                    console.log(listU);                                                    
                                                     let i = 0;
                                                     for (let ing in listI) {
                                                         let ingbalise = $('<li class="listitemIng" id"line'+i+'"></li>');
