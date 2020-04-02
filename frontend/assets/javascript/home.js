@@ -62,6 +62,8 @@
                                                         ++i;
                                                     }
                                                 } else {
+                                                    console.log(data.list.length);
+
                                                     $('#listIngredient').html("Il y a pas d'unité ou d'ingredient");
                                                 }
                                             } else {
