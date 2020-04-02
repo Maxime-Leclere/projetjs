@@ -42,11 +42,10 @@
                                                     let listU = new Array();
 
                                                     for (let item in data.list.ingredient) {
-                                                        listI.push(new Ingredient(item[0], item[1]));
-                                                        console.log(item);
+                                                        listI.push(new Ingredient(data.list.ingredient[item][0], data.list.ingredient[item][1]));
                                                     }
                                                     for (let item in data.list.unite) {
-                                                        listU.push(new Unit(item[0], item[1]));
+                                                        listU.push(new Unit(data.list.unite[item][0], data.list.unite[item][1]));
                                                     }
                                                     console.log(listI);
                                                     console.log(listU);
