@@ -48,6 +48,7 @@
                                                     y = 0;
                                                     for (let item in data.list.unite) {
                                                         listU.push(new Unit(item[y][0], item[y][1]));
+                                                        ++y;
                                                     }
                                                     console.log(listI);
                                                     console.log(listU);
