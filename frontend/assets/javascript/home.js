@@ -31,6 +31,46 @@
                                     }),
                                     $('<button>Créer Cocktail</button>').click(function () {
                                         $('.form_home').hide();
+                                        $.ajax({
+                                            url: '/backend/json/allIngUnit.php',
+                                            method: 'get'
+                                        })
+                                        .done(function (data) {
+                                            if (data.hasOwnProperty('list')) {
+                                                if (data.list.length > 1) {
+                                                    let listI = new Array();
+                                                    let listU = new Array();
+                                                    for (let item in data.list["ingredient"]) {
+                                                        listI.push(new Ingredient(item[0], item[1]));
+                                                    }
+                                                    for (let item in data.list["unite"]) {
+                                                        listU.push(new Unit(item[0], item[1]));
+                                                    }
+                                                    let i = 0;
+                                                    for (let ing in listI) {
+                                                        let ingbalise = $('<li class="listitemIng" id"line'+i+'"></li>');
+                                                        let checkbox = $('<input type="checkbox" id="checkIng'+i+'" name="check'+i+'">');
+                                                        let nameIng = $('<label for"checkIng">'+ing.getName()+'</label>');
+                                                        let idhide = $('<input type="hidden" name"idIng'+i+'" value"'+ing.getId()+'">')
+                                                        let text = $('<input type="text" id="edit_text'+i+'" name="quantity'+i+'" maxlength="4" size="3" pattern="\d*" title="Seulement des chiffres">');
+                                                        let unitlist = $('<select id="listunite'+i+'" name="unite'+i+'"></select>');
+                                                        for (let uni in listU) {
+                                                            unitlist.append($('<option value="'+uni.getId()+'">'+ uni.getName()));
+                                                        }
+                                                        ingbalise.append(checkbox, nameIng, idhide, text, unitlist);
+                                                        $('#listIngredient').append(ingbalise);
+                                                        ++i;
+                                                    }
+                                                } else {
+                                                    $('#listIngredient').html("Il y a pas d'unité ou d'ingredient");
+                                                }
+                                            } else {
+                                                //// TODO:
+                                            }
+                                        })
+                                        .fail(function () {
+                                            $('#form_cocktail').html("une erreur critique est arrivée");
+                                        });
                                         $('#form_cocktail').fadeIn();
                                     }));
                     $('.form_home').hide();
@@ -56,7 +96,9 @@
                                                     let listIngredient = $('<ul/>');
                                                     let list = dataC.recipe[1].ingredients;
                                                     for (let ingredient in list) {
-                                                        listIngredient.append($('<li/>').html(list[ingredient][0][1] + " : " + list[ingredient][2] + " " + list[ingredient][1][1]));
+                                                        listIngredient.append($('<li/>').html(list[ingredient][0][1] +
+                                                            " : " + list[ingredient][2] + " " +
+                                                            list[ingredient][1][1]));
                                                     }
                                                     $('#recipe'+ data.cocktail[cocktail][0])
                                                         .append($('<p>'+ data.cocktail[cocktail][2] +'</p>'),
@@ -65,7 +107,8 @@
                                                 }
                                             })
                                             .fail(function () {
-                                                $('#recipe'+ data.cocktail[cocktail][0]).html("une erreur critique est arrivée");
+                                                $('#recipe'+ data.cocktail[cocktail][0])
+                                                    .html("une erreur critique est arrivée");
 
                                             });
                                         });
@@ -73,10 +116,12 @@
                                 }
 
                             } else {
-                                $("#list_cocktail").html("Aucune recette de cocktail est enregistrée");
+                                $("#list_cocktail")
+                                    .html("Aucune recette de cocktail est enregistrée");
                             }
                         } else {
-                            $("#list_cocktail").html("cocktail n'existe pas. donc bug à corriger");
+                            $("#list_cocktail")
+                                .html("cocktail n'existe pas. donc bug à corriger");
 
                         }
                     })
