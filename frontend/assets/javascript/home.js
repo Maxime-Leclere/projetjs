@@ -41,13 +41,11 @@
                                                     let listI = new Array();
                                                     let listU = new Array();
                                                     for (let item in data.list.ingredient) {
-                                                        listI.push(new Ingredient(item[ingredient][0], item[ingredient][1]));
+                                                        listI.push(new Ingredient(item[0], item[1]));
                                                     }
                                                     for (let item in data.list.unite) {
-                                                        listU.push(new Unit(item[unite][0], item[unite][1]));
+                                                        listU.push(new Unit(item[0], item[1]));
                                                     }
-                                                    console.log(listI[0].getName());
-                                                    console.log(listU[0].getName());
                                                     let i = 0;
                                                     for (let ing in listI) {
                                                         let ingbalise = $('<li class="listitemIng" id"line'+i+'"></li>');

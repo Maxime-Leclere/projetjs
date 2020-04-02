@@ -18,13 +18,13 @@ $dataU = $reqU->fetchAll();
 
 if(sizeof($dataI) != 0) {
     for ($i=0; $i < sizeof($dataI); $i++) {
-        $listIngrUnit->list["ingredient"][] = array($dataI[$i]["idI"], $dataI[$i]["description_I"]);
+        $listIngrUnit->list["ingredient"][$i] = array($dataI[$i]["idI"], $dataI[$i]["description_I"]);
     }
 }
 
 if(sizeof($dataU) != 0) {
     for ($i=0; $i < sizeof($dataU); $i++) {
-        $listIngrUnit->list["unite"][] = array($dataU[$i]["idU"], $dataU[$i]["description_U"]);
+        $listIngrUnit->list["unite"][$i] = array($dataU[$i]["idU"], $dataU[$i]["description_U"]);
     }
 }
 
