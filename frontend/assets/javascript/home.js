@@ -55,7 +55,7 @@
                                                         let checkbox = $('<input type="checkbox" id="checkIng'+i+'" name="check'+i+'">');
                                                         let nameIng = $('<label for"checkIng">'+listI[ing].getName()+'</label>');
                                                         let idhide = $('<input type="hidden" name"idIng'+i+'" value"'+listI[ing].getId()+'">')
-                                                        let text = $('<input type="text" id="edit_text'+i+'" name="quantity'+i+'" maxlength="4" size="1" pattern="\d*" title="Seulement des chiffres">');
+                                                        let text = $('<input type="text" id="edit_text'+i+'" name="quantity'+i+'" maxlength="4" size="1" pattern="\\d*" title="Seulement des chiffres">');
                                                         let unitlist = $('<select id="listunite'+i+'" name="unite'+i+'"></select>');
                                                         for (let uni in listU) {
                                                             unitlist.append($('<option value="'+listU[uni].getId()+'">'+ listU[uni].getName()+'</option>'));
