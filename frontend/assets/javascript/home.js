@@ -53,12 +53,12 @@
                                                     for (let ing in listI) {
                                                         let ingbalise = $('<li class="listitemIng" id"line'+i+'"></li>');
                                                         let checkbox = $('<input type="checkbox" id="checkIng'+i+'" name="check'+i+'">');
-                                                        let nameIng = $('<label for"checkIng">'+ing.getName()+'</label>');
-                                                        let idhide = $('<input type="hidden" name"idIng'+i+'" value"'+ing.getId()+'">')
+                                                        let nameIng = $('<label for"checkIng">'+listI[ing].getName()+'</label>');
+                                                        let idhide = $('<input type="hidden" name"idIng'+i+'" value"'+listI[ing].getId()+'">')
                                                         let text = $('<input type="text" id="edit_text'+i+'" name="quantity'+i+'" maxlength="4" size="3" pattern="\d*" title="Seulement des chiffres">');
                                                         let unitlist = $('<select id="listunite'+i+'" name="unite'+i+'"></select>');
                                                         for (let uni in listU) {
-                                                            unitlist.append($('<option value="'+uni.getId()+'">'+ uni.getName()));
+                                                            unitlist.append($('<option value="'+listU[uni].getId()+'">'+ listU[uni].getName()));
                                                         }
                                                         ingbalise.append(checkbox, nameIng, idhide, text, unitlist);
                                                         $('#listIngredient').append(ingbalise);
