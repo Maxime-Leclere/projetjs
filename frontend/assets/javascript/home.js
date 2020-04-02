@@ -42,7 +42,7 @@
                                                     let listU = new Array();
                                                     let y = 0;
                                                     for (let item in data.list.ingredient) {
-                                                        listI.push(new Ingredient(item[y][0], item[y]][1]));
+                                                        listI.push(new Ingredient(item[y][0], item[y][1]));
                                                         ++y;
                                                     }
                                                     y = 0;
