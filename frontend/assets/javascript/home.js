@@ -58,7 +58,7 @@
                                                         let text = $('<input type="text" id="edit_text'+i+'" name="quantity'+i+'" maxlength="4" size="1" pattern="\d*" title="Seulement des chiffres">');
                                                         let unitlist = $('<select id="listunite'+i+'" name="unite'+i+'"></select>');
                                                         for (let uni in listU) {
-                                                            unitlist.append($('<option value="'+listU[uni].getId()+'">'+ listU[uni].getName()));
+                                                            unitlist.append($('<option value="'+listU[uni].getId()+'">'+ listU[uni].getName()+'</option>'));
                                                         }
                                                         ingbalise.append(checkbox, nameIng, idhide, text, unitlist);
                                                         $('#listIngredient').append(ingbalise);
