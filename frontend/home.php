@@ -31,6 +31,7 @@
                     <label>Description</label>
                     <textarea name="detail"></textarea><br>
                     <ul id="listIngredient"></ul><br>
+                    <p id="message_form_home"></p>
                     <input type="submit" value="Envoyer">
                 </form>
             </div>

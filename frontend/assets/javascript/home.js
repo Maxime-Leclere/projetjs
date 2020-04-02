@@ -31,6 +31,7 @@
                                     }),
                                     $('<button>Créer Cocktail</button>').click(function () {
                                         $('.form_home').hide();
+                                        $('#listIngredient').empty();
                                         $.ajax({
                                             url: '/backend/json/allIngUnit.php',
                                             method: 'get'
