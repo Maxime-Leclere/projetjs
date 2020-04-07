@@ -89,7 +89,7 @@
                             if (data.hasOwnProperty('success')) {
                                 if (data.success === true) {
 
-                                } else $("#message_ingredient").html(data.error).fadeIn();
+                                } else {$("#message_ingredient").html(data.error).fadeIn();}
                             }
                         })
                         .fail(function () {
@@ -109,7 +109,7 @@
                             if (data.hasOwnProperty('success')) {
                                 if (data.success === true) {
 
-                                } else $("#message_unit").html(data.error).fadeIn();
+                                } else {$("#message_unit").html(data.error).fadeIn();}
                         })
                         .fail(function () {
                             $('#form_ingr').html("une erreur critique est arrivée");
