@@ -78,6 +78,34 @@
                                         });
                                         $('#form_cocktail').fadeIn();
                                     }));
+                    $('#form_ingr').submit(function () {
+                        $.ajax({
+                            url: $(this).attr('action'),
+                            method: $(this).attr('method'),
+                            data: $(this).serialize()
+                        })
+                        .done(function () {
+                        })
+                        .fail(function () {
+                            $('#form_ingr').html("une erreur critique est arrivée");
+                        });
+
+                        return false;
+                    });
+                    $('#form_unit').submit(function () {
+                        $.ajax({
+                            url: $(this).attr('action'),
+                            method: $(this).attr('method'),
+                            data: $(this).serialize()
+                        })
+                        .done(function () {
+                        })
+                        .fail(function () {
+                            $('#form_ingr').html("une erreur critique est arrivée");
+                        });
+
+                        return false;
+                    });
                     $('.form_home').hide();
                     $.ajax({
                         url: '/backend/json/allCocktail.php',
