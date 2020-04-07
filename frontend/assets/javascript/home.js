@@ -110,6 +110,7 @@
                                 if (data.success === true) {
 
                                 } else {$("#message_unit").html(data.error).fadeIn();}
+                            }
                         })
                         .fail(function () {
                             $('#form_ingr').html("une erreur critique est arrivée");
