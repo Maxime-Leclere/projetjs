@@ -15,12 +15,14 @@
                     <label>Description</label>
                     <input type="text" name="description_I">
                     <input type="submit" value="Envoyer">
+                    <p id="message_ingredient"></p>
                 </form>
                 <form class="form_home" id="form_unit" action="../backend/json/insertUnit.php" method="post">
                     <h1>Nouvel Unité</h1>
                     <label>Description</label>
                     <input type="text" name="description_U">
                     <input type="submit" value="Envoyer">
+                    <p id="message_unit"></p>
                 </form>
                 <form class="form_home" id="form_cocktail" action="../backend/json/qq.php" method="post">
                     <h1>Nouveau Cocktail</h1>
@@ -31,8 +33,8 @@
                     <label>Description</label>
                     <textarea name="detail"></textarea><br>
                     <ul id="listIngredient"></ul><br>
-                    <p id="message_form_home"></p>
                     <input type="submit" value="Envoyer">
+                    <p id="message_cocktail"></p>
                 </form>
             </div>
             <div id="list_cocktail"></div>

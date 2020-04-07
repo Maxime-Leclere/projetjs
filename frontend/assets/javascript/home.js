@@ -79,12 +79,18 @@
                                         $('#form_cocktail').fadeIn();
                                     }));
                     $('#form_ingr').submit(function () {
+                        $('#message_ingredient').fadeOut();
                         $.ajax({
                             url: $(this).attr('action'),
                             method: $(this).attr('method'),
                             data: $(this).serialize()
                         })
-                        .done(function () {
+                        .done(function (data) {
+                            if (data.hasOwnProperty('success')) {
+                                if (data.success === true) {
+
+                                } else $("#message_ingredient").html(data.error).fadeIn();
+                            }
                         })
                         .fail(function () {
                             $('#form_ingr').html("une erreur critique est arrivée");
@@ -93,12 +99,17 @@
                         return false;
                     });
                     $('#form_unit').submit(function () {
+                        $('#message_unit').fadeOut();
                         $.ajax({
                             url: $(this).attr('action'),
                             method: $(this).attr('method'),
                             data: $(this).serialize()
                         })
-                        .done(function () {
+                        .done(function (data) {
+                            if (data.hasOwnProperty('success')) {
+                                if (data.success === true) {
+
+                                } else $("#message_unit").html(data.error).fadeIn();
                         })
                         .fail(function () {
                             $('#form_ingr').html("une erreur critique est arrivée");
