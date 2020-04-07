@@ -14,8 +14,7 @@ $reqS = $db->prepare("SELECT idI, description_I FROM INGREDIENT
             WHERE description_I = \"$name\"");
 $reqS->execute();
 $result = $reqS->fetchAll();
-if(!sizeof($result)) {
-    echo !sizeof($result);
+if(sizeof($result)) {
     $obj->success = false;
 } else {
     $req = $db->prepare("INSERT INTO `INGREDIENT`(`description_I`) VALUES (\"$name\")");

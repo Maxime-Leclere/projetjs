@@ -15,7 +15,7 @@ $reqS = $db->prepare('SELECT idU, description_U FROM UNIT
             WHERE description_U = "'.$name.'"');
 $reqS->execute();
 $result = $reqS->fetchAll();
-if(isset($result)) {
+if(sizeof($result)) {
     $obj->success = false;
 } else {
     $req = $db->prepare("INSERT INTO `UNIT`(`description_U`) VALUES (\"$name\")");
