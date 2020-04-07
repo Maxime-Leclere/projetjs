@@ -10,8 +10,8 @@ $name = $_POST["description_I"];
 
 $db = PDOFactory::getConnexion();
 
-$reqS = $db->prepare('SELECT idI, description_I FROM INGREDIENT
-            WHERE description_I = "'.$name.'"');
+$reqS = $db->prepare("SELECT idI, description_I FROM INGREDIENT
+            WHERE description_I = \"$name\"");
 $reqS->execute();
 $result = $reqS->fetchAll();
 if(!sizeof($result)) {
