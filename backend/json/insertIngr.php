@@ -15,7 +15,7 @@ $reqS = $db->prepare('SELECT idI, description_I FROM INGREDIENT
 $reqS->execute();
 $result = $reqS->fetchAll();
 if(isset($result)) {
-    echo "dedede";
+    echo $result;
     $obj->success = false;
 } else {
     $req = $db->prepare("INSERT INTO `INGREDIENT`(`description_I`) VALUES (\"$name\")");
