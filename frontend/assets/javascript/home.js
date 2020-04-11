@@ -158,7 +158,7 @@
                             }
                         })
                         .fail(function () {
-                            $('#form_home').html("une erreur critique est arrivée");
+                            $('#form_cocktail').html("une erreur critique est arrivée");
                         });
 
                         return false;
