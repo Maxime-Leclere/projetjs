@@ -20,7 +20,7 @@ $result = $reqS->fetchAll();
 
 if (sizeof(array_unique($ingList)) != sizeof($ingList)) { // si il y a des doublons
     $obj->success = false;
-} if(!sizeof($result)) {
+} if(sizeof($result) != 0) {
     $obj->success = false;
     $obj->error = "Ce titre est déjà utilisé";
 } if ($obj->success) {
