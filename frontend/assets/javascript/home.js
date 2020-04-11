@@ -72,11 +72,11 @@
                                                         let ingbalise2 = $('<li class="listitemIng" id="line'+count+'"></li>');
                                                         let inglist2 = $('<select id="inglist'+count+'" name="inglist'+count+'"></select>');
                                                         for (let ing in listI) {
-                                                            inglist.append($('<option value="'+listI[ing].getId()+'">'+ listI[ing].getName()+'</option>'));
+                                                            inglist2.append($('<option value="'+listI[ing].getId()+'">'+ listI[ing].getName()+'</option>'));
                                                         }
                                                         let unitlist2 = $('<select id="listunite'+count+'" name="unite'+count+'"></select>');
                                                         for (let uni in listU) {
-                                                            unitlist.append($('<option value="'+listU[uni].getId()+'">'+ listU[uni].getName()+'</option>'));
+                                                            unitlist2.append($('<option value="'+listU[uni].getId()+'">'+ listU[uni].getName()+'</option>'));
                                                         }
                                                         let text2 = $('<input type="text" id="edit_text'+count+'" name="quantity'+count+'" maxlength="4" size="1" pattern="\\d*" title="Seulement des chiffres">');
 
