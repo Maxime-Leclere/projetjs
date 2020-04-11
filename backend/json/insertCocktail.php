@@ -14,7 +14,8 @@ for ($i=0; $i < $quantityIng; $i++) {
     var_dump ($_POST['inglist'+$i]);
 
 }
-var_dump($_POST['inglist0']);
+$test = 0;
+var_dump($_POST['inglist'+$test]);
 var_dump( $ingList);
 
 $db = PDOFactory::getConnexion();
