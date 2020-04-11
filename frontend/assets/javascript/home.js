@@ -67,6 +67,7 @@
 
                                                     ingbalise.append(inglist, text, unitlist);
                                                     $('#listIngredient').append(ingbalise);
+                                                    count++;
                                                     console.log(count + " apres une fois");
 
                                                     $('#buttonplus').on('click', function () {
