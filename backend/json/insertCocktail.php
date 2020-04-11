@@ -12,6 +12,7 @@ $ingList = array();
 
 for ($i=0; $i < $quantityIng; $i++) {
     $ingList[] = $_POST['inglist'+$i];
+    echo $_POST['inglist'+$i];
 }
 echo $ingList;
 
