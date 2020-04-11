@@ -53,7 +53,22 @@
                                                     console.log(listU);
 
                                                     let count = 1;
-                                                    function makeIngBalise(listI, listU) {
+                                                    let ingbalise = $('<li class="listitemIng" id="line'+count+'"></li>');
+                                                    let inglist = $('<select id="inglist'+count+'" name="inglist'+count+'"></select>');
+                                                    for (let ing in listI) {
+                                                        inglist.append($('<option value="'+listI[ing].getId()+'">'+ listI[ing].getName()+'</option>'));
+                                                    }
+                                                    let unitlist = $('<select id="listunite'+count+'" name="unite'+count+'"></select>');
+                                                    for (let uni in listU) {
+                                                        unitlist.append($('<option value="'+listU[uni].getId()+'">'+ listU[uni].getName()+'</option>'));
+                                                    }
+                                                    let text = $('<input type="text" id="edit_text'+count+'" name="quantity'+count+'" maxlength="4" size="1" pattern="\\d*" title="Seulement des chiffres">');
+
+                                                    ingbalise.append(inglist, text, unitlist);
+                                                    $('#listIngredient').append(ingbalise);
+                                                    console.log(count + " dans function");
+
+                                                    $('#buttonplus').click(function () {
                                                         let ingbalise = $('<li class="listitemIng" id="line'+count+'"></li>');
                                                         let inglist = $('<select id="inglist'+count+'" name="inglist'+count+'"></select>');
                                                         for (let ing in listI) {
@@ -68,13 +83,10 @@
                                                         ingbalise.append(inglist, text, unitlist);
                                                         $('#listIngredient').append(ingbalise);
                                                         console.log(count + " dans function");
-                                                    }
-                                                    $('#buttonplus').click(function () {
-                                                        makeIngBalise(listI, listU);
+
                                                         count = count+1;
                                                         $('#quantityIng').attr("value", count)
                                                     });
-                                                    makeIngBalise(listI, listU);
                                                     // for (let ing in listI) {
                                                     //     let ingbalise = $('<li class="listitemIng" id"line'+i+'"></li>');
                                                     //     let checkbox = $('<input type="checkbox" id="checkIng'+i+'" name="check'+i+'">');
