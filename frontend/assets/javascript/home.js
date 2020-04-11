@@ -67,7 +67,7 @@
                                                         ingbalise.append(inglist, text, unitlist);
                                                         $('#listIngredient').append(ingbalise);
 
-                                                        ++i;
+                                                        i++;
                                                     }
                                                     $('#buttonplus').click(function () {
                                                         makeIngBalise(i, listI, listU);
