@@ -53,7 +53,7 @@
 
                                                     var i = 1;
                                                     let makeIngBalise = function (i, listI, listU) {
-                                                        let ingbalise = $('<li class="listitemIng" id"line'+i+'"></li>');
+                                                        let ingbalise = $('<li class="listitemIng" id="line'+i+'"></li>');
                                                         let inglist = $('<select id="inglist'+i+'" name="inglist'+i+'"></select>');
                                                         for (let ing in listI) {
                                                             inglist.append($('<option value="'+listI[ing].getId()+'">'+ listI[ing].getName()+'</option>'));
