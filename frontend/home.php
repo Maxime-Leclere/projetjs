@@ -33,7 +33,7 @@
                     <label>Description</label>
                     <textarea name="detail"></textarea><br>
                     <ul id="listIngredient"></ul>
-                    <button type="button" id="buttonplus" click="makeingbalise()">Ajouter un ingrédient</button><br>
+                    <button type="button" id="buttonplus">Ajouter un ingrédient</button><br>
                     <input type="hidden" id="quantityIng" name="quantityIng" value="1">
                     <input type="submit" value="Envoyer">
                     <p id="message_cocktail"></p>

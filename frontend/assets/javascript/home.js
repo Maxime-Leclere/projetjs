@@ -32,7 +32,8 @@
                                     $('<button>Créer Cocktail</button>').click(function () {
                                         $('.form_home').hide();
                                         $('#listIngredient').empty();
-                                        $('#quantityIng').attr("value", 1)
+                                        $('#quantityIng').attr("value", 1);
+                                        $('#buttonplus').click(false);
                                         $.ajax({
                                             url: '/backend/json/allIngUnit.php',
                                             method: 'get'
@@ -68,7 +69,7 @@
                                                     $('#listIngredient').append(ingbalise);
                                                     console.log(count + " apres une fois");
 
-                                                    function makeingbalise() {
+                                                    $('#buttonplus').click(function () {
                                                         console.log(count + " dans debut function click");
                                                         let ingbalise2 = $('<li class="listitemIng" id="line'+count+'"></li>');
                                                         let inglist2 = $('<select id="inglist'+count+'" name="inglist'+count+'"></select>');
@@ -87,21 +88,7 @@
 
                                                         count = count+1;
                                                         $('#quantityIng').attr("value", count)
-                                                    }
-                                                    // for (let ing in listI) {
-                                                    //     let ingbalise = $('<li class="listitemIng" id"line'+i+'"></li>');
-                                                    //     let checkbox = $('<input type="checkbox" id="checkIng'+i+'" name="check'+i+'">');
-                                                    //     let nameIng = $('<label for"checkIng">'+listI[ing].getName()+'</label>');
-                                                    //     let idhide = $('<input type="hidden" name"idIng'+i+'" value"'+listI[ing].getId()+'">');
-                                                    //     let text = $('<input type="text" id="edit_text'+i+'" name="quantity'+i+'" maxlength="4" size="1" pattern="\\d*" title="Seulement des chiffres">');
-                                                    //     let unitlist = $('<select id="listunite'+i+'" name="unite'+i+'"></select>');
-                                                    //     for (let uni in listU) {
-                                                    //         unitlist.append($('<option value="'+listU[uni].getId()+'">'+ listU[uni].getName()+'</option>'));
-                                                    //     }
-                                                    //     ingbalise.append(checkbox, nameIng, idhide, text, unitlist);
-                                                    //     $('#listIngredient').append(ingbalise);
-                                                    //     ++i;
-                                                    // }
+                                                    });
                                                 } else {
                                                     console.log(data.list.length);
                                                     $('#listIngredient').html("Il y a pas d'unité ou d'ingredient");
