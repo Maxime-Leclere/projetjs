@@ -51,8 +51,9 @@
                                                     }
                                                     console.log(listI);
                                                     console.log(listU);
-
+                                                    console.log(count+ " avant initialiser");
                                                     let count = 1;
+                                                    console.log(count+ " apres initialiser");
                                                     let ingbalise = $('<li class="listitemIng" id="line'+count+'"></li>');
                                                     let inglist = $('<select id="inglist'+count+'" name="inglist'+count+'"></select>');
                                                     for (let ing in listI) {
