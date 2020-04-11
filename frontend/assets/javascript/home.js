@@ -66,9 +66,10 @@
 
                                                     ingbalise.append(inglist, text, unitlist);
                                                     $('#listIngredient').append(ingbalise);
-                                                    console.log(count + " dans function");
+                                                    console.log(count + " apres une fois");
 
                                                     $('#buttonplus').click(function () {
+                                                        console.log(count + " dans debut function click");
                                                         let ingbalise2 = $('<li class="listitemIng" id="line'+count+'"></li>');
                                                         let inglist2 = $('<select id="inglist'+count+'" name="inglist'+count+'"></select>');
                                                         for (let ing in listI) {
@@ -82,7 +83,7 @@
 
                                                         ingbalise2.append(inglist2, text2, unitlist2);
                                                         $('#listIngredient').append(ingbalise2);
-                                                        console.log(count + " dans function");
+                                                        console.log(count + " dans apres function click");
 
                                                         count = count+1;
                                                         $('#quantityIng').attr("value", count)
