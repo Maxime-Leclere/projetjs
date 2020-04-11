@@ -87,7 +87,7 @@
 
                                                         count = count+1;
                                                         $('#quantityIng').attr("value", count)
-                                                    });
+                                                    }
                                                     // for (let ing in listI) {
                                                     //     let ingbalise = $('<li class="listitemIng" id"line'+i+'"></li>');
                                                     //     let checkbox = $('<input type="checkbox" id="checkIng'+i+'" name="check'+i+'">');
