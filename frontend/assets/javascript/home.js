@@ -68,7 +68,7 @@
                                                     $('#listIngredient').append(ingbalise);
                                                     console.log(count + " apres une fois");
 
-                                                    $('#buttonplus').click(function () {
+                                                    $('#buttonplus').on('click', function () {
                                                         console.log(count + " dans debut function click");
                                                         let ingbalise2 = $('<li class="listitemIng" id="line'+count+'"></li>');
                                                         let inglist2 = $('<select id="inglist'+count+'" name="inglist'+count+'"></select>');
