@@ -10,10 +10,10 @@ $quantityIng = $_POST['quantityIng'];
 $ingList = array();
 
 for ($i=0; $i < $quantityIng; $i++) {
-    $ingList[] = $_POST['inglist'+$i];
+    $ingList[] = $_POST['inglist'.$i];
 }
 $test = 0;
-var_dump($_POST['inglist'+strval($test)]);
+var_dump($_POST['inglist'.strval($test)]);
 var_dump( $ingList);
 
 $db = PDOFactory::getConnexion();
