@@ -67,7 +67,7 @@
 
                                                         ingbalise.append(inglist, text, unitlist);
                                                         $('#listIngredient').append(ingbalise);
-
+                                                        console.log(count + " dans function");
                                                     }
                                                     $('#buttonplus').click(function () {
                                                         makeIngBalise(listI, listU);
