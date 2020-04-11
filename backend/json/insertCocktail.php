@@ -14,7 +14,7 @@ for ($i=0; $i < $quantityIng; $i++) {
 }
 
 $db = PDOFactory::getConnexion();
-$reqS = $db->prepare('SELECT title FROM COCKTAIL WHERE title = '. $title);
+$reqS = $db->prepare('SELECT title FROM COCKTAIL WHERE title ="'. $title.'"');
 $reqS->execute();
 $result = $reqS->fetchAll();
 
