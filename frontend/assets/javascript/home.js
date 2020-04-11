@@ -32,6 +32,7 @@
                                     $('<button>Créer Cocktail</button>').click(function () {
                                         $('.form_home').hide();
                                         $('#listIngredient').empty();
+                                        $('#quantityIng').attr("value", 1)
                                         $.ajax({
                                             url: '/backend/json/allIngUnit.php',
                                             method: 'get'
