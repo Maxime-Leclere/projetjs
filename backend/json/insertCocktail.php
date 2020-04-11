@@ -7,7 +7,7 @@ $obj->error = "Impossible d'avoir des doublons d'ingrédients";
 
 $title = $_POST['title'];
 $quantityIng = $_POST['quantityIng'];
-
+echo $title;echo $quantityIng;
 $ingList = array();
 
 for ($i=0; $i < $quantityIng; $i++) {
