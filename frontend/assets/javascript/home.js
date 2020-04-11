@@ -51,7 +51,7 @@
                                                     console.log(listI);
                                                     console.log(listU);
 
-                                                    let i = 1;
+                                                    var i = 1;
                                                     let makeIngBalise = function (i, listI, listU) {
                                                         let ingbalise = $('<li class="listitemIng" id"line'+i+'"></li>');
                                                         let inglist = $('<select id="inglist'+i+'" name="inglist'+i+'"></select>');
