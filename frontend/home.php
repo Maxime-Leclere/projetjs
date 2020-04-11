@@ -24,7 +24,7 @@
                     <input type="submit" value="Envoyer">
                     <p id="message_unit"></p>
                 </form>
-                <form class="form_home" id="form_cocktail" action="../backend/json/qq.php" method="post">
+                <form class="form_home" id="form_cocktail" action="../backend/json/insertCocktail.php" method="post">
                     <h1>Nouveau Cocktail</h1>
                     <label>Titre</label>
                     <input type="text" name="title" required><br>
