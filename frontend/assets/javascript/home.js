@@ -138,7 +138,7 @@
                             }
                         })
                         .fail(function () {
-                            $('#form_ingr').html("une erreur critique est arrivée");
+                            $('#form_unit').html("une erreur critique est arrivée");
                         });
 
                         return false;
@@ -154,11 +154,11 @@
                             if (data.hasOwnProperty('success')) {
                                 if (data.success === true) {
 
-                                } else {$("#message_unit").html(data.error).fadeIn();}
+                                } else {$("#message_cocktail").html(data.error).fadeIn();}
                             }
                         })
                         .fail(function () {
-                            $('#form_ingr').html("une erreur critique est arrivée");
+                            $('#form_home').html("une erreur critique est arrivée");
                         });
 
                         return false;
