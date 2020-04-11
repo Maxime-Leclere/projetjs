@@ -50,21 +50,44 @@
                                                     }
                                                     console.log(listI);
                                                     console.log(listU);
-                                                    let i = 0;
-                                                    for (let ing in listI) {
+
+                                                    let i = 1;
+                                                    let makeIngBalise = function (i, listI, listU) {
                                                         let ingbalise = $('<li class="listitemIng" id"line'+i+'"></li>');
-                                                        let checkbox = $('<input type="checkbox" id="checkIng'+i+'" name="check'+i+'">');
-                                                        let nameIng = $('<label for"checkIng">'+listI[ing].getName()+'</label>');
-                                                        let idhide = $('<input type="hidden" name"idIng'+i+'" value"'+listI[ing].getId()+'">')
-                                                        let text = $('<input type="text" id="edit_text'+i+'" name="quantity'+i+'" maxlength="4" size="1" pattern="\\d*" title="Seulement des chiffres">');
+                                                        let inglist = $('<select id="inglist'+i+'" name="inglist'+i+'"></select>');
+                                                        for (let ing in listI) {
+                                                            inglist.append($('<option value="'+listI[ing].getId()+'">'+ listI[ing].getName()+'</option>'));
+                                                        }
                                                         let unitlist = $('<select id="listunite'+i+'" name="unite'+i+'"></select>');
                                                         for (let uni in listU) {
                                                             unitlist.append($('<option value="'+listU[uni].getId()+'">'+ listU[uni].getName()+'</option>'));
                                                         }
-                                                        ingbalise.append(checkbox, nameIng, idhide, text, unitlist);
+                                                        let text = $('<input type="text" id="edit_text'+i+'" name="quantity'+i+'" maxlength="4" size="1" pattern="\\d*" title="Seulement des chiffres">');
+
+                                                        ingbalise.append(inglist, text, unitlist);
                                                         $('#listIngredient').append(ingbalise);
+
                                                         ++i;
                                                     }
+                                                    $('#buttonplus').click(function () {
+                                                        makeIngBalise(i, listI, listU);
+                                                        $('#quantityIng').attr("value", i)
+                                                    });
+                                                    makeIngBalise(i, listI, listU);
+                                                    // for (let ing in listI) {
+                                                    //     let ingbalise = $('<li class="listitemIng" id"line'+i+'"></li>');
+                                                    //     let checkbox = $('<input type="checkbox" id="checkIng'+i+'" name="check'+i+'">');
+                                                    //     let nameIng = $('<label for"checkIng">'+listI[ing].getName()+'</label>');
+                                                    //     let idhide = $('<input type="hidden" name"idIng'+i+'" value"'+listI[ing].getId()+'">');
+                                                    //     let text = $('<input type="text" id="edit_text'+i+'" name="quantity'+i+'" maxlength="4" size="1" pattern="\\d*" title="Seulement des chiffres">');
+                                                    //     let unitlist = $('<select id="listunite'+i+'" name="unite'+i+'"></select>');
+                                                    //     for (let uni in listU) {
+                                                    //         unitlist.append($('<option value="'+listU[uni].getId()+'">'+ listU[uni].getName()+'</option>'));
+                                                    //     }
+                                                    //     ingbalise.append(checkbox, nameIng, idhide, text, unitlist);
+                                                    //     $('#listIngredient').append(ingbalise);
+                                                    //     ++i;
+                                                    // }
                                                 } else {
                                                     console.log(data.list.length);
                                                     $('#listIngredient').html("Il y a pas d'unité ou d'ingredient");
