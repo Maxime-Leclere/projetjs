@@ -7,14 +7,14 @@ $obj->error = "Impossible d'avoir des doublons d'ingrédients";
 
 $title = $_POST['title'];
 $quantityIng = $_POST['quantityIng'];
-echo $title;echo $quantityIng;
 $ingList = array();
 
 for ($i=0; $i < $quantityIng; $i++) {
     $ingList[] = $_POST['inglist'+$i];
-    echo $_POST['inglist'+$i];
+    var_dump ($_POST['inglist'+$i]);
+
 }
-echo $ingList;
+var_dump( $ingList);
 
 $db = PDOFactory::getConnexion();
 $reqS = $db->prepare('SELECT title FROM COCKTAIL WHERE title = ' + $title);
