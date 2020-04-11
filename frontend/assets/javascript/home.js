@@ -52,28 +52,30 @@
                                                     console.log(listU);
 
                                                     let i = 1;
-                                                    let makeIngBalise = function (listI, listU) {
-                                                        let ingbalise = $('<li class="listitemIng" id="line'+i+'"></li>');
-                                                        let inglist = $('<select id="inglist'+i+'" name="inglist'+i+'"></select>');
+
+                                                    let makeIngBalise = function (count, listI, listU) {
+                                                        let ingbalise = $('<li class="listitemIng" id="line'+count+'"></li>');
+                                                        let inglist = $('<select id="inglist'+count+'" name="inglist'+count+'"></select>');
                                                         for (let ing in listI) {
                                                             inglist.append($('<option value="'+listI[ing].getId()+'">'+ listI[ing].getName()+'</option>'));
                                                         }
-                                                        let unitlist = $('<select id="listunite'+i+'" name="unite'+i+'"></select>');
+                                                        let unitlist = $('<select id="listunite'+count+'" name="unite'+count+'"></select>');
                                                         for (let uni in listU) {
                                                             unitlist.append($('<option value="'+listU[uni].getId()+'">'+ listU[uni].getName()+'</option>'));
                                                         }
-                                                        let text = $('<input type="text" id="edit_text'+i+'" name="quantity'+i+'" maxlength="4" size="1" pattern="\\d*" title="Seulement des chiffres">');
+                                                        let text = $('<input type="text" id="edit_text'+count+'" name="quantity'+count+'" maxlength="4" size="1" pattern="\\d*" title="Seulement des chiffres">');
 
                                                         ingbalise.append(inglist, text, unitlist);
                                                         $('#listIngredient').append(ingbalise);
 
-                                                        i = i+1;
+                                                        count = count+1;
                                                     }
+                                                    makeIngBalise(i, listI, listU);
+                                                    i = 1;
                                                     $('#buttonplus').click(function () {
-                                                        makeIngBalise(listI, listU);
+                                                        makeIngBalise(i, listI, listU);
                                                         $('#quantityIng').attr("value", i)
                                                     });
-                                                    makeIngBalise(listI, listU);
                                                     // for (let ing in listI) {
                                                     //     let ingbalise = $('<li class="listitemIng" id"line'+i+'"></li>');
                                                     //     let checkbox = $('<input type="checkbox" id="checkIng'+i+'" name="check'+i+'">');
