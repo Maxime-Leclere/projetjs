@@ -32,9 +32,9 @@
                     <input type="text" name="description_C"><br>
                     <label>Description</label>
                     <textarea name="detail"></textarea><br>
-                    <ul id="listIngredient"></ul><br>
+                    <ul id="listIngredient"></ul>
+                    <button type="button" id="buttonplus">Ajouter un ingrédient</button><br>
                     <input type="hidden" name"quantityIng" value"1">
-                    <button type="button" id="buttonplus">+</button>
                     <input type="submit" value="Envoyer">
                     <p id="message_cocktail"></p>
                 </form>
