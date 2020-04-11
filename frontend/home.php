@@ -27,11 +27,11 @@
                 <form class="form_home" id="form_cocktail" action="../backend/json/qq.php" method="post">
                     <h1>Nouveau Cocktail</h1>
                     <label>Titre</label>
-                    <input type="text" name="title"><br>
+                    <input type="text" name="title" required><br>
                     <label>Résumé</label>
-                    <input type="text" name="description_C"><br>
+                    <input type="text" name="description_C" required><br>
                     <label>Description</label>
-                    <textarea name="detail"></textarea><br>
+                    <textarea name="detail" required></textarea><br>
                     <button type="button" id="buttonplus">Ajouter un ingrédient</button><br>
                     <ul id="listIngredient"></ul>
                     <input type="hidden" id="quantityIng" name="quantityIng" value="1">
