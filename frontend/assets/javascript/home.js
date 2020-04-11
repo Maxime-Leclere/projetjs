@@ -52,7 +52,7 @@
                                                     console.log(listU);
 
                                                     var i = 1;
-                                                    let makeIngBalise = function (i, listI, listU) {
+                                                    let makeIngBalise = function (listI, listU) {
                                                         let ingbalise = $('<li class="listitemIng" id="line'+i+'"></li>');
                                                         let inglist = $('<select id="inglist'+i+'" name="inglist'+i+'"></select>');
                                                         for (let ing in listI) {
@@ -70,7 +70,7 @@
                                                         i = i+1;
                                                     }
                                                     $('#buttonplus').click(function () {
-                                                        makeIngBalise(i, listI, listU);
+                                                        makeIngBalise(listI, listU);
                                                         $('#quantityIng').attr("value", i)
                                                     });
                                                     makeIngBalise(i, listI, listU);
