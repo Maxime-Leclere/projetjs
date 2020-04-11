@@ -52,7 +52,7 @@
                                                     console.log(listI);
                                                     console.log(listU);
 
-                                                    let i = 0;
+                                                    let i = 1;
                                                     let makeIngBalise = function (listI, listU) {
                                                         let ingbalise = $('<li class="listitemIng" id="line'+i+'"></li>');
                                                         let inglist = $('<select id="inglist'+i+'" name="inglist'+i+'"></select>');
@@ -68,10 +68,10 @@
                                                         ingbalise.append(inglist, text, unitlist);
                                                         $('#listIngredient').append(ingbalise);
 
-                                                        i = i+1;
                                                     }
                                                     $('#buttonplus').click(function () {
                                                         makeIngBalise(listI, listU);
+                                                        i = i+1;
                                                         $('#quantityIng').attr("value", i)
                                                     });
                                                     makeIngBalise(listI, listU);
