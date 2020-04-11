@@ -63,7 +63,7 @@
                                                     for (let uni in listU) {
                                                         unitlist.append($('<option value="'+listU[uni].getId()+'">'+ listU[uni].getName()+'</option>'));
                                                     }
-                                                    let text = $('<input type="text" id="edit_text'+count+'" name="quantity'+count+'" maxlength="4" size="1" pattern="\\d*" title="Seulement des chiffres">');
+                                                    let text = $('<input type="text" id="edit_text'+count+'" name="quantity'+count+'" maxlength="4" size="1" pattern="\\d*" title="Seulement des chiffres" required>');
 
                                                     ingbalise.append(inglist, text, unitlist);
                                                     $('#listIngredient').append(ingbalise);
@@ -81,7 +81,7 @@
                                                         for (let uni in listU) {
                                                             unitlist2.append($('<option value="'+listU[uni].getId()+'">'+ listU[uni].getName()+'</option>'));
                                                         }
-                                                        let text2 = $('<input type="text" id="edit_text'+count+'" name="quantity'+count+'" maxlength="4" size="1" pattern="\\d*" title="Seulement des chiffres">');
+                                                        let text2 = $('<input type="text" id="edit_text'+count+'" name="quantity'+count+'" maxlength="4" size="1" pattern="\\d*" title="Seulement des chiffres" required>');
 
                                                         ingbalise2.append(inglist2, text2, unitlist2);
                                                         $('#listIngredient').append(ingbalise2);
