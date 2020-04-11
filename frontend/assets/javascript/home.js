@@ -73,7 +73,7 @@
                                                         makeIngBalise(listI, listU);
                                                         $('#quantityIng').attr("value", i)
                                                     });
-                                                    makeIngBalise(i, listI, listU);
+                                                    makeIngBalise(listI, listU);
                                                     // for (let ing in listI) {
                                                     //     let ingbalise = $('<li class="listitemIng" id"line'+i+'"></li>');
                                                     //     let checkbox = $('<input type="checkbox" id="checkIng'+i+'" name="check'+i+'">');
