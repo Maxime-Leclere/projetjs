@@ -171,6 +171,9 @@
                     });
                     $('.form_home').hide();
                     $('#lineform').hide();
+                    function refreshListCocktail() {
+                        $('#list_cocktail').empty();
+                    }
                     $.ajax({
                         url: '/backend/json/allCocktail.php',
                         method: 'get'
@@ -210,6 +213,8 @@
                                             });
                                         });
                                     $('#list_cocktail').append(recipeDiv);
+                                    if (cocktail != data.cocktail.length)
+                                        $('#list_cocktail').append($('<hr>'));
                                 }
 
                             } else {
