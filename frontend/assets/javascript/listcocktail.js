@@ -12,39 +12,51 @@ class ListCocktail {
         .done(function (data) {
             if (data.hasOwnProperty('cocktail')) {
                 if (data.cocktail.length != 0) {
-                    console.log("cocktail > 0");
+                    let listCocktail = new Array();
                     for (let cocktail in data.cocktail) {
-                        let recipeDiv = $('<div class="recipe" id="recipe'+ data.cocktail[cocktail][0] +'"></div>')
-                            .append($('<h2>'+ data.cocktail[cocktail][1] +'</h2>'))
+                        listCocktail.push(new Cocktail(data.cocktail[cocktail][0],
+                            data.cocktail[cocktail][1], data.cocktail[cocktail][2],
+                            data.cocktail[cocktail][3]));
+                    }
+                    console.log("cocktail > 0");
+                    for (let cocktail in listCocktail) {
+                        let recipeDiv = $('<div class="recipe" id="recipe'+ listCocktail[cocktail].getId() +'"></div>')
+                            .append($('<h2>'+ listCocktail[cocktail].getTitle() +'</h2>'))
                             .one('click', function () {
                                 $.ajax({
                                     url: '/backend/json/getRecipe.php',
                                     method: 'post',
-                                    data: { idrecipe: data.cocktail[cocktail][0] }
+                                    data: { idrecipe: listCocktail[cocktail].getId() }
                                 })
                                 .done(function (dataC) {
                                     if (dataC.hasOwnProperty('recipe')) {
                                         let listIngredient = $('<ul/>');
                                         let list = dataC.recipe[1].ingredients;
-                                        for (let ingredient in list) {
-                                            listIngredient.append($('<li/>').html(list[ingredient][0][1] +
-                                                " : " + list[ingredient][2] + " " +
-                                                list[ingredient][1][1]));
+                                        let listIngRecipe = new Array();
+                                        for (let ing in list) {
+                                            listIngRecipe.push(new Ingredient(list[ing][0][0],
+                                                list[ing][0][1]), new Unit(list[ing][1][0],
+                                                list[ing][1][1]), list[ing][2]);
                                         }
-                                        $('#recipe'+ data.cocktail[cocktail][0])
-                                            .append($('<p>'+ data.cocktail[cocktail][2] +'</p>'),
-                                                $('<p>'+ data.cocktail[cocktail][3] +'</p>'),
+                                        for (let ingredient in listIngRecipe) {
+                                            listIngredient.append($('<li/>').html(listIngRecipe[ingredient][0].getName() +
+                                                " : " + listIngRecipe[ingredient][2] + " " +
+                                                listIngRecipe[ingredient][1].getName()));
+                                        }
+                                        $('#recipe'+ listCocktail[cocktail].getId())
+                                            .append($('<p>'+ listCocktail[cocktail].getDescription() +'</p>'),
+                                                $('<p>'+ listCocktail[cocktail].getDetail() +'</p>'),
                                                 listIngredient);
                                     }
                                 })
                                 .fail(function () {
-                                    $('#recipe'+ data.cocktail[cocktail][0])
+                                    $('#recipe'+ listCocktail[cocktail].getId())
                                         .html("une erreur critique est arrivée");
 
                                 });
                             });
                         $('#list_cocktail').append(recipeDiv);
-                        if (cocktail != data.cocktail.length-1)
+                        if (cocktail != listCocktail.length-1)
                             $('#list_cocktail').append($('<hr>'));
                     }
 

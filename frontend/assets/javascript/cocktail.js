@@ -16,7 +16,7 @@ class Cocktail {
     }
 
     getDescription() {
-        return this.idescriptiond;
+        return this.description;
     }
 
     getDetail() {
