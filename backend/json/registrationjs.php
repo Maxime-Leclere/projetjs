@@ -15,7 +15,6 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
                 WHERE login = "'.$login.'"');
     $req->execute();
     $result = $req->fetchAll();
-    var_dump($result);
 
     if (strlen($login) > 10) {
         $obj->error["#message_login"] = "le login ne peut avoir que 10 caractères au maximum";
@@ -24,7 +23,6 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
     } if(sizeof($result)) {
         $obj->error["#message_login"] = "le login est déjà utilisé";
     }
-    var_dump($obj->error);
 
     if (!sizeof($obj->error)) {
         // on insere dans la base de donné si il n'y a pas d'erreur
