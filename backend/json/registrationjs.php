@@ -18,7 +18,7 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
     var_dump($result);
 
     if (strlen($login) > 10) {
-        $obj->error["#message_login"] = "le login ne peut avoir que 10 caractères";
+        $obj->error["#message_login"] = "le login ne peut avoir que 10 caractères au maximum";
     } if (strlen($password) < 8) {
         $obj->error["#message_password"] = "le password doit avoir plus de 8 caractères";
     } if(sizeof($result)) {
