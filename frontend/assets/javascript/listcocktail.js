@@ -34,9 +34,9 @@ class ListCocktail {
                                         let list = dataC.recipe[1].ingredients;
                                         let listIngRecipe = new Array();
                                         for (let ing in list) {
-                                            listIngRecipe.push(new Ingredient(list[ing][0][0],
+                                            listIngRecipe.push(new Array(new Ingredient(list[ing][0][0],
                                                 list[ing][0][1]), new Unit(list[ing][1][0],
-                                                list[ing][1][1]), list[ing][2]);
+                                                list[ing][1][1]), list[ing][2]));
                                         }
                                         console.log(listIngRecipe);
                                         for (let ingredient in listIngRecipe) {
