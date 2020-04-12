@@ -16,7 +16,10 @@ if(sizeof($data) != 0) {
     $idCocktail = 1;
     $ingredients = array();
     for ($i=0; $i < sizeof($data); $i++) {
-        // if ($data[$i]['idC'] == $data[$i-1]['idC'])continue;
+        if ($data[$i]['idC'] == $data[$i-1]['idC']){
+            --$i;
+            continue;
+        }
         $listCocktail->cocktail[/*$idCocktail*/$i] = array($data[$i]['idC'], $data[$i]['title'],
             $data[$i]['description_C'], $data[$i]['detail']);//, "ingredients" => array());
     //     if ($idCocktail  === intval($data[$i]['idC'])) {
