@@ -39,12 +39,13 @@ if (sizeof(array_unique($ingList)) != sizeof($ingList)) { // si il y a des doubl
     $reqSId = $db->prepare('SELECT idC FROM COCKTAIL WHERE title ="'. $title.'"');
     $reqSId->execute();
     $resultSId = $reqSId->fetchAll();
+    $resultSIdToInt = intval($resultSId[0]['idC']);
     var_dump($resultSId);
     foreach ($listIngUnit as $key => $value) {
         $reqInsertRecipe = $db->prepare("INSERT INTO `COCKTAILINGREDIENTUNIT`
-            (`id_C`, `id_I`, `id_U`, `quantity`) VALUES (intval($resultSId[0]['idC']),
+            (`id_C`, `id_I`, `id_U`, `quantity`) VALUES ($resultSIdToInt,
             $listIngUnit[$key][0], $listIngUnit[$key][1], $listIngUnit[$key][2])");
-        var_dump($resultSId[0]);
+        var_dump($resultSIdToInt);
         var_dump($listIngUnit[$key][0]);
         var_dump($listIngUnit[$key][1]);
         var_dump($listIngUnit[$key][2]);
