@@ -16,7 +16,7 @@
                 <p id="message"></p>
                 <input type="submit"/>
             </form>
-            <a href="registration.php">Vous n'avez pas de compte? Inscriver-vous ici.</a>
+            <a href="registration.php">Vous n'avez pas de compte? Inscrivez-vous ici.</a>
         </main>
     </body>
 </html>
