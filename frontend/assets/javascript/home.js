@@ -213,7 +213,7 @@
                                             });
                                         });
                                     $('#list_cocktail').append(recipeDiv);
-                                    if (cocktail != data.cocktail.length)
+                                    if (cocktail != data.cocktail.length-1)
                                         $('#list_cocktail').append($('<hr>'));
                                 }
 
