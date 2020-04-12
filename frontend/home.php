@@ -34,7 +34,8 @@
                     <input type="text" name="description_C" required><br>
                     <label>Description</label><br>
                     <textarea name="detail" required></textarea><br>
-                    <button type="button" id="buttonplus">Ajouter un ingrédient</button><br>
+                    <button type="button" id="buttonplus">Ajouter un ingrédient</button>
+                    <button type="button" id="buttonsuppr">Supprimer les ingrédients</button><br>
                     <ul id="listIngredient"></ul>
                     <input type="hidden" id="quantityIng" name="quantityIng" value="1">
                     <input type="submit" value="Envoyer">

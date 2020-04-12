@@ -40,6 +40,7 @@
                                         $('#listIngredient').empty();
                                         $('#quantityIng').attr("value", 1);
                                         $('#buttonplus').off('click');
+                                        $('#buttonsuppr').off('click');
                                         $.ajax({
                                             url: '/backend/json/allIngUnit.php',
                                             method: 'get'
@@ -95,6 +96,15 @@
 
                                                         count = count+1;
                                                         $('#quantityIng').attr("value", count)
+                                                    });
+                                                    $('#buttonsuppr').on('click', function () {
+                                                        let quantityInginter = $('#quantityIng').attr("value");
+                                                        quantityInginter++;
+                                                        for (let i = 1; i < quantityInginter; i++) {
+                                                            $('#line'+i).remove();
+                                                        }
+                                                        count = 1;
+                                                        $('#quantityIng').attr("value", 1);
                                                     });
                                                 } else {
                                                     console.log(data.list.length);
