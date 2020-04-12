@@ -42,7 +42,11 @@ if(sizeof($data) != 0) {
         // $listRecipe->recipe[$idCocktail]['ingredients'][] = $value;
         array_push($listRecipe->recipe[$idCocktail]['ingredients'], $value);
     }
+    $inter = end($listRecipe->recipe);
+    $listRecipe->recipe = array();
+    $listRecipe->recipe[1] = $inter;
 }
+
 
 header('Cache-Control: no-cache, must-revalidate');
 header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
