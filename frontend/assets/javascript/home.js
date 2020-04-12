@@ -59,7 +59,7 @@
                                                     for (let ing in listI) {
                                                         inglist.append($('<option value="'+listI[ing].getId()+'">'+ listI[ing].getName()+'</option>'));
                                                     }
-                                                    let unitlist = $('<select id="listunite'+count+'" name="unite'+count+'"></select>');
+                                                    let unitlist = $('<select id="listunite'+count+'" name="unitList'+count+'"></select>');
                                                     for (let uni in listU) {
                                                         unitlist.append($('<option value="'+listU[uni].getId()+'">'+ listU[uni].getName()+'</option>'));
                                                     }
@@ -77,7 +77,7 @@
                                                         for (let ing in listI) {
                                                             inglist2.append($('<option value="'+listI[ing].getId()+'">'+ listI[ing].getName()+'</option>'));
                                                         }
-                                                        let unitlist2 = $('<select id="listunite'+count+'" name="unite'+count+'"></select>');
+                                                        let unitlist2 = $('<select id="listunite'+count+'" name="unitList'+count+'"></select>');
                                                         for (let uni in listU) {
                                                             unitlist2.append($('<option value="'+listU[uni].getId()+'">'+ listU[uni].getName()+'</option>'));
                                                         }

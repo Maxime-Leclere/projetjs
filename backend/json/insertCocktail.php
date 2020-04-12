@@ -29,6 +29,11 @@ if (sizeof(array_unique($ingList)) != sizeof($ingList)) { // si il y a des doubl
     $reqICocktail = $db->prepare("INSERT INTO `COCKTAIL`(`title`, `description_C`, `detail`)
                                 VALUES (\"$title\", \"$descr\", \"$detail\")");
     $reqICocktail->execute();
+    $listIngUnit = array();
+    for ($i=0; $i < $quantityIng; $i++) {
+        $listIngUnit['inglist'.$i] = $_POST['unitList'.$i];
+    }
+    var_dump($listIngUnit);
 }
 
 
