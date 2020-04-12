@@ -38,6 +38,7 @@
                     <input type="submit" value="Envoyer">
                     <p id="message_cocktail"></p>
                 </form>
+                <hr id="lineform">
             </div>
             <div id="list_cocktail"></div>
         </main>

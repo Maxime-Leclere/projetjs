@@ -23,14 +23,19 @@
                                             }),
                                     $('<button>Créer Ingrédient</button>').click(function () {
                                         $('.form_home').hide();
+                                        $('#lineform').hide();
                                         $('#form_ingr').fadeIn();
+                                        $('#lineform').fadeIn();
                                     }),
                                     $('<button>Créer Unité</button>').click(function () {
                                         $('.form_home').hide();
+                                        $('#lineform').hide();
                                         $('#form_unit').fadeIn();
+                                        $('#lineform').fadeIn();
                                     }),
                                     $('<button>Créer Cocktail</button>').click(function () {
                                         $('.form_home').hide();
+                                        $('#lineform').hide();
                                         $('#listIngredient').empty();
                                         $('#quantityIng').attr("value", 1);
                                         $('#buttonplus').off('click');
@@ -102,6 +107,7 @@
                                             $('#form_cocktail').html("une erreur critique est arrivée");
                                         });
                                         $('#form_cocktail').fadeIn();
+                                        $('#lineform').fadeIn();
                                     }));
                     $('#form_ingr').submit(function () {
                         $('#message_ingredient').fadeOut();
