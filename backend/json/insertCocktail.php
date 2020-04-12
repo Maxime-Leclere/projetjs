@@ -31,8 +31,9 @@ if (sizeof(array_unique($ingList)) != sizeof($ingList)) { // si il y a des doubl
     $reqICocktail->execute();
     $listIngUnit = array();
     for ($i=0; $i < $quantityIng; $i++) {
-        $listIngUnit[$_POST['inglist'.$i]] = $_POST['unitList'.$i];
+        $listIngUnit[] = array($_POST['inglist'.$i], $_POST['unitList'.$i]);
     }
+
     var_dump($listIngUnit);
 }
 
