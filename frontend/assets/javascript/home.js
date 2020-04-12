@@ -170,6 +170,7 @@
                         return false;
                     });
                     $('.form_home').hide();
+                    $('#lineform').hide();
                     $.ajax({
                         url: '/backend/json/allCocktail.php',
                         method: 'get'
