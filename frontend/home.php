@@ -30,7 +30,7 @@
                     <input type="text" name="title" required><br>
                     <label>Résumé</label>
                     <input type="text" name="description_C" required><br>
-                    <label>Description</label>
+                    <label>Description</label><br>
                     <textarea name="detail" required></textarea><br>
                     <button type="button" id="buttonplus">Ajouter un ingrédient</button><br>
                     <ul id="listIngredient"></ul>

@@ -45,7 +45,8 @@ if (sizeof(array_unique($ingList)) != sizeof($ingList)) { // si il y a des doubl
         $reqInsertRecipe = $db->prepare("INSERT INTO `COCKTAILINGREDIENTUNIT`
             (`id_C`, `id_I`, `id_U`, `quantity`) VALUES ($resultSIdToInt,
             $listIngUnit[$key][0], $listIngUnit[$key][1], $listIngUnit[$key][2])");
-            $reqInsertRecipe->execute();
+        var_dump($reqInsertRecipe);
+        $reqInsertRecipe->execute();
         var_dump($resultSIdToInt);
         var_dump($listIngUnit[$key][0]);
         var_dump($listIngUnit[$key][1]);
