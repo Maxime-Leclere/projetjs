@@ -1,0 +1,66 @@
+class ListCocktail {
+    constructor() {
+
+    }
+
+    refreshListCocktail() {
+        $('#list_cocktail').empty();
+        $.ajax({
+            url: '/backend/json/allCocktail.php',
+            method: 'get'
+        })
+        .done(function (data) {
+            if (data.hasOwnProperty('cocktail')) {
+                if (data.cocktail.length != 0) {
+                    console.log("cocktail > 0");
+                    for (let cocktail in data.cocktail) {
+                        let recipeDiv = $('<div class="recipe" id="recipe'+ data.cocktail[cocktail][0] +'"></div>')
+                            .append($('<h2>'+ data.cocktail[cocktail][1] +'</h2>'))
+                            .one('click', function () {
+                                $.ajax({
+                                    url: '/backend/json/getRecipe.php',
+                                    method: 'post',
+                                    data: { idrecipe: data.cocktail[cocktail][0] }
+                                })
+                                .done(function (dataC) {
+                                    if (dataC.hasOwnProperty('recipe')) {
+                                        let listIngredient = $('<ul/>');
+                                        let list = dataC.recipe[1].ingredients;
+                                        for (let ingredient in list) {
+                                            listIngredient.append($('<li/>').html(list[ingredient][0][1] +
+                                                " : " + list[ingredient][2] + " " +
+                                                list[ingredient][1][1]));
+                                        }
+                                        $('#recipe'+ data.cocktail[cocktail][0])
+                                            .append($('<p>'+ data.cocktail[cocktail][2] +'</p>'),
+                                                $('<p>'+ data.cocktail[cocktail][3] +'</p>'),
+                                                listIngredient);
+                                    }
+                                })
+                                .fail(function () {
+                                    $('#recipe'+ data.cocktail[cocktail][0])
+                                        .html("une erreur critique est arrivée");
+
+                                });
+                            });
+                        $('#list_cocktail').append(recipeDiv);
+                        if (cocktail != data.cocktail.length-1)
+                            $('#list_cocktail').append($('<hr>'));
+                    }
+
+                } else {
+                    $("#list_cocktail")
+                        .html("Aucune recette de cocktail est enregistrée");
+                }
+            } else {
+                $("#list_cocktail")
+                    .html("cocktail n'existe pas. donc bug à corriger");
+
+            }
+        })
+        .fail(function () {
+            $('body').html("une erreur critique est arrivée");
+        });
+    }
+
+}
