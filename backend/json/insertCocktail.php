@@ -31,10 +31,18 @@ if (sizeof(array_unique($ingList)) != sizeof($ingList)) { // si il y a des doubl
     $reqICocktail->execute();
     $listIngUnit = array();
     for ($i=0; $i < $quantityIng; $i++) {
-        $listIngUnit[] = array($_POST['inglist'.$i], $_POST['unitList'.$i]);
+        $listIngUnit[] = array($_POST['inglist'.$i], $_POST['unitList'.$i], $_POST['quantity'.$i]);
     }
-
     var_dump($listIngUnit);
+    $reqInsertRecipe = null;
+    $reqSId = $db->prepare('SELECT idC FROM COCKTAIL WHERE title ="'. $title.'"');
+    $reqSId->execute();
+    $resultSId = $reqSId->fetchAll();
+    foreach ($listIngUnit as $key => $value) {
+        $reqInsertRecipe = $db->prepare("INSERT INTO `COCKTAILINGREDIENTUNIT`
+            (`id_C`, `id_I`, `id_U`, `quantity`) VALUES ($resultSId[0],
+            $listIngUnit[$key][0], $listIngUnit[$key][1], $listIngUnit[$key][2])");
+    }
 }
 
 
