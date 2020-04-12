@@ -31,7 +31,8 @@ if (sizeof(array_unique($ingList)) != sizeof($ingList)) { // si il y a des doubl
     $reqICocktail->execute();
     $listIngUnit = array();
     for ($i=0; $i < $quantityIng; $i++) {
-        $listIngUnit[] = array($_POST['inglist'.$i], $_POST['unitList'.$i], $_POST['quantity'.$i]);
+        $listIngUnit[] = array(intval($_POST['inglist'.$i]), intval($_POST['unitList'.$i]),
+            intval($_POST['quantity'.$i]));
     }
     var_dump($listIngUnit);
     $reqInsertRecipe = null;
