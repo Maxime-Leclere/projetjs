@@ -15,6 +15,7 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
                 WHERE login = "'.$login.'"');
     $req->execute();
     $result = $req->fetchAll();
+    var_dump($result);
 
     if (strlen($login) > 10) {
         $obj->error["#message_login"] = "le login ne peut avoir que 10 caractères";
