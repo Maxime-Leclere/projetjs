@@ -38,6 +38,7 @@ class ListCocktail {
                                                 list[ing][0][1]), new Unit(list[ing][1][0],
                                                 list[ing][1][1]), list[ing][2]);
                                         }
+                                        console.log(listIngRecipe);
                                         for (let ingredient in listIngRecipe) {
                                             listIngredient.append($('<li/>').html(listIngRecipe[ingredient][0].getName() +
                                                 " : " + listIngRecipe[ingredient][2] + " " +
